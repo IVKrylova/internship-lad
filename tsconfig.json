@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components": ["components"],
+      "@components/*": ["components/*"],
+      "@layout": ["layout"],
+      "@layout/*": ["layout/*"],
+      "@templates": ["templates"],
+      "@templates/*": ["templates/*"],
+      "@hooks": ["hooks"],
+      "@hooks/*": ["hooks/*"],
+      "@public": ["public"],
+      "@public/*": ["public/*"],
+      "@api": ["api"],
+      "@api/*": ["api/*"],
+      "@styles": ["styles"],
+      "@styles/*": ["styles/*"],
+      "@servises": ["servises"],
+      "@servises/*": ["servises/*"],
+      "@types": ["types"],
+      "@types/*": ["types/*"]
+    }
+  }
+}
