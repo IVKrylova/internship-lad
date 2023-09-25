@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 import { Inter } from "next/font/google";
 
-import { HeaderApp } from '@components';
+import { HeaderApp, Footer } from '@components';
 
 import style from './LayoutApp.module.scss';
 
@@ -15,7 +15,8 @@ export const LayoutApp: FC<TProps> = ({ children }) => {
   return (
     <div className={`${style.wrap} ${inter.className}`}>
       <HeaderApp />
-      {children}
+      <main className={style.main}>{children}</main>
+      <Footer />
     </div>
   );
 };

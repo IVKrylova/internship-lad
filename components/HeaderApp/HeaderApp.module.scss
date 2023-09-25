@@ -7,6 +7,8 @@
   width: 100%;
   gap: 40px;
   align-items: center;
+  @include width_1360;
+  margin: 0 auto;
 
   .company {
     @include grow-shrink;

@@ -1,0 +1,13 @@
+@import "@styles/_mixins";
+  @import "@styles/variables";
+
+.footer {
+  width: 100%;
+  background-color: $colorText;
+
+  .wrap {
+    @include width_1360;
+    margin: 0 auto;
+    color: $colorWhite;
+  }
+}
