@@ -1,7 +1,4 @@
-type TLink = {
-  text: string;
-  link: string;
-};
+import { TLink } from "@types";
 
 export const LINKS: TLink[] = [
   {

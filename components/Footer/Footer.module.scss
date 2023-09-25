@@ -1,5 +1,5 @@
 @import "@styles/_mixins";
-  @import "@styles/variables";
+@import "@styles/variables";
 
 .footer {
   width: 100%;
@@ -9,5 +9,61 @@
     @include width_1360;
     margin: 0 auto;
     color: $colorWhite;
+    padding: 90px 4.4% 40px;
+    @include flex-column;
+    gap: 90px;
+
+    .content {
+      width: 100%;
+      display: grid;
+      gap: 40px;
+      grid-template-columns: (
+        333px repeat(3, calc((100% - 40px * 3 - 333px) / 3))
+      );
+      justify-items: center;
+
+      .about {
+        @include flex-column;
+        gap: 30px;
+
+        .text {
+          color: $colorLigthText;
+          @include font_s16_w600;
+          line-height: 1.75;
+        }
+      }
+    }
+
+    .policy {
+      display: flex;
+      gap: 40px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: -30px;
+        left: 4.4%;
+        content: "";
+        height: 1px;
+        width: 91.2%;
+        background-color: $colorLine;
+      }
+
+      .copyright {
+        @include grow-shrink;
+        color: $colorLigthText;
+        @include font_s16_w600;
+
+        .accent {
+          color: $colorCta;
+        }
+      }
+
+      .link {
+        @include el_hover;
+        color: $colorLigthText;
+        @include font_s16_w600;
+      }
+    }
   }
 }

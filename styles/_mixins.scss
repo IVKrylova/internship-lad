@@ -20,10 +20,25 @@
   padding: 0;
 }
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 // fonts
 @mixin font_s16_w700 {
   font-size: 16px;
   font-weight: 700;
+}
+
+@mixin font_s16_w600 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@mixin font_s20_w800 {
+  font-size: 20px;
+  font-weight: 800;
 }
 
 // animation

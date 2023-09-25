@@ -1,0 +1,25 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.column {
+  @include flex-column;
+  gap: 30px;
+
+  .title {
+    @include font_s20_w800;
+    color: $colorWhite;
+  }
+
+  .list {
+    @include flex-column;
+    gap: 12px;
+    list-style-type: none;
+
+    .link {
+      color: $colorLigthText;
+      @include font_s16_w600;
+      line-height: 1.75;
+      @include el_hover;
+    }
+  }
+}
