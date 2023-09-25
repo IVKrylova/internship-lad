@@ -1,0 +1,7 @@
+@import '@styles/_mixins';
+
+.wrap {
+  @include width_1360;
+  @include grid-1fr;
+  margin: 0 auto;
+}

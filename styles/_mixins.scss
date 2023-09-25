@@ -1,0 +1,37 @@
+// common
+@mixin width_1360 {
+  width: 100%;
+  max-width: 1360px;
+}
+
+@mixin grid-1fr {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@mixin grow-shrink {
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+@mixin reset-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+// fonts
+@mixin font_s16_w700 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+// animation
+@mixin el_hover {
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

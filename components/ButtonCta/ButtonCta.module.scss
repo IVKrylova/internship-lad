@@ -1,0 +1,12 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.button {
+  @include reset-button;
+  background-color: $colorCta;
+  color: $colorWhite;
+  border-radius: 12px;
+  padding: 20px 30px;
+  @include font_s16_w700;
+  @include el_hover;
+}

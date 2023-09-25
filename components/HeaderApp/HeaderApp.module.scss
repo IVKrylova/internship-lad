@@ -1,0 +1,38 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.header {
+  padding: 30px 4.4%;
+  display: flex;
+  width: 100%;
+  gap: 40px;
+  align-items: center;
+
+  .company {
+    @include grow-shrink;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      @include el_hover;
+
+      &::before {
+        content: "";
+        height: 32px;
+        width: 2px;
+        background-color: $colorLigthGrey;
+        margin-right: 12px;
+        display: inline-block;
+      }
+
+      &Text {
+        color: $colorLigthGrey;
+        @include font_s16_w700;
+      }
+    }
+  }
+}

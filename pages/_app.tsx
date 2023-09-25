@@ -1,12 +1,12 @@
-import { ReactNode } from 'react';
-import { Provider } from 'react-redux';
-import type { AppProps } from 'next/app';
-import { NextPage } from 'next';
+import { ReactNode } from "react";
+import { Provider } from "react-redux";
+import type { AppProps } from "next/app";
+import { NextPage } from "next";
 
-import { wrapper } from '../servises/store';
+import { wrapper } from "@servises/store";
 
-import '../styles/global.css';
-import '../styles/reset.css';
+import "@styles/globals.css";
+import "@styles/reset.css";
 
 type TPage<P = {}> = NextPage<P> & {
   getLayout?: (page: ReactNode) => ReactNode;
@@ -21,10 +21,8 @@ const WrappedApp = ({ Component, ...pageProps }: TProps) => {
   const getLayout = Component.getLayout || ((page: ReactNode) => page);
 
   return (
-    <Provider store={store}>
-      {getLayout(<Component {...props} />)}
-    </Provider>
+    <Provider store={store}>{getLayout(<Component {...props} />)}</Provider>
   );
-}
+};
 
 export default WrappedApp;

@@ -1,0 +1,14 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.list {
+  display: flex;
+  gap: 40px;
+  list-style-type: none;
+
+  .link {
+    color: $colorText;
+    @include font_s16_w700;
+    @include el_hover;
+  }
+}
