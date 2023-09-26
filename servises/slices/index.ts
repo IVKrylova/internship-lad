@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import { teamSlice } from "./team";
+import { guidesSlice } from "./guides";
 
 export const rootReducer = combineReducers({
-  team: teamSlice.reducer,
+  guides: guidesSlice.reducer,
 });

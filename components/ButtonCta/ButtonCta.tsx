@@ -6,13 +6,15 @@ type TProps = {
   type: "button" | "submit" | "reset" | undefined;
   className?: string;
   text: string;
+  handleClick: () => void;
 };
 
-export const ButtonCta: FC<TProps> = ({ className, type, text }) => {
+export const ButtonCta: FC<TProps> = ({ className, type, text, handleClick }) => {
   return (
     <button
       type={type}
       className={`${className ? className : ""} ${style.button}`}
+      onClick={handleClick}
     >
       {text}
     </button>

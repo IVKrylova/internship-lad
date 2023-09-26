@@ -6,6 +6,8 @@ import { ButtonCta, H1 } from "@components";
 import style from "./HomeTemplate.module.scss";
 
 export const HomeTemplate: FC = () => {
+  const handleButtonClick = () => {};
+
   return (
     <>
       <Banner
@@ -17,7 +19,7 @@ export const HomeTemplate: FC = () => {
         src4x="/img/main_banner_4x.png"
       >
         <Filters />
-        <ButtonCta type="button" text="Search" />
+        <ButtonCta type="button" text="Search" handleClick={handleButtonClick} />
         <H1 title="Find the Best Egyptian Guide" className={style.h1} />
       </Banner>
     </>
