@@ -1,0 +1,75 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.select {
+  position: relative;
+  width: 100%;
+
+  &:not(:last-child)::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: $colorText;
+    opacity: 0.2;
+    right: 0;
+    top: 0;
+  }
+
+  .title {
+    color: $colorText;
+    opacity: 0.5;
+    @include font_s16_w600;
+    margin-bottom: 8.5px;
+  }
+
+  &Current {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 24px;
+    line-height: 1.5;
+    @include font_s20_w600;
+
+    &:after {
+      content: "";
+      background-image: url("../../../../../../public/img/icon_chevron_down.svg");
+      background-repeat: no-repeat;
+      background-size: 24px;
+      width: 24px;
+      height: 24px;
+      transform: rotate(0deg);
+      transition: transform 0.2s linear;
+    }
+
+    &Active {
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .options {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: -10px;
+    flex-direction: column;
+    padding: 5px;
+    width: 100%;
+    background: #ffff;
+    border-radius: 5px;
+    z-index: 100;
+
+    &Active {
+      display: flex;
+
+      .item {
+        padding: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}

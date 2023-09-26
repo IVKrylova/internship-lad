@@ -2,5 +2,6 @@
 @import "@styles/variables";
 
 .h1 {
-  @include visually_hidden;
+  color: $colorText;
+  @include font_s36_w800;
 }

@@ -25,6 +25,17 @@
   flex-direction: column;
 }
 
+@mixin visually_hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 // fonts
 @mixin font_s16_w700 {
   font-size: 16px;
@@ -36,8 +47,18 @@
   font-weight: 600;
 }
 
+@mixin font_s20_w600 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 @mixin font_s20_w800 {
   font-size: 20px;
+  font-weight: 800;
+}
+
+@mixin font_s36_w800 {
+  font-size: 36px;
   font-weight: 800;
 }
 
