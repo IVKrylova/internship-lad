@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Banner, Filters } from "./components";
+import { Banner, Filters, Guides } from "./components";
 import { ButtonCta, H1 } from "@components";
 
 import style from "./HomeTemplate.module.scss";
@@ -19,9 +19,16 @@ export const HomeTemplate: FC = () => {
         src4x="/img/main_banner_4x.png"
       >
         <Filters />
-        <ButtonCta type="button" text="Search" handleClick={handleButtonClick} />
+        <ButtonCta
+          type="button"
+          text="Search"
+          handleClick={handleButtonClick}
+          className={style.buttonSearch}
+        />
         <H1 title="Find the Best Egyptian Guide" className={style.h1} />
       </Banner>
+
+      <Guides />
     </>
   );
 };

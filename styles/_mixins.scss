@@ -47,9 +47,19 @@
   font-weight: 600;
 }
 
+@mixin font_s18_w700 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
 @mixin font_s20_w600 {
   font-size: 20px;
   font-weight: 600;
+}
+
+@mixin font_s20_w700 {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 @mixin font_s20_w800 {
@@ -57,8 +67,18 @@
   font-weight: 800;
 }
 
+@mixin font_s24_w800 {
+  font-size: 24px;
+  font-weight: 800;
+}
+
 @mixin font_s36_w800 {
   font-size: 36px;
+  font-weight: 800;
+}
+
+@mixin font_s64_w800 {
+  font-size: 64px;
   font-weight: 800;
 }
 

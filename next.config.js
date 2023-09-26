@@ -3,7 +3,7 @@ module.exports = {
   swcMinify: true,
   output: 'standalone',
   images: {
-    // domains: [''],
+    domains: ['reqres.in'],
     formats: ['image/avif', 'image/webp'],
   },
 }
