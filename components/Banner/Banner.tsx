@@ -11,6 +11,7 @@ type TProps = {
   src2x: string;
   src3x: string;
   src4x: string;
+  classAction?: string;
 };
 
 export const Banner: FC<TProps> = ({
@@ -21,6 +22,7 @@ export const Banner: FC<TProps> = ({
   src2x,
   src3x,
   src4x,
+  classAction,
 }) => {
   return (
     <section
@@ -39,7 +41,10 @@ export const Banner: FC<TProps> = ({
           className={style.background}
         />
       </picture>
-      <div className={style.action} id={actionId}>
+      <div
+        className={`${style.action} ${classAction ? classAction : ""}`}
+        id={actionId}
+      >
         {children}
       </div>
     </section>

@@ -1,12 +1,99 @@
 @import "@styles/_mixins";
 @import "@styles/variables";
 
-.h2 {
-  @include visually_hidden;
+.info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+
+  .message {
+    @include font_s40_w700;
+    color: $colorText;
+    @include max-width-mixin(572px);
+    line-height: 1.35;
+    display: inline-flex;
+    flex-direction: column;
+
+    .accent {
+      color: $colorCta;
+    }
+  }
+
+  .action {
+    @include max-width-mixin(252px);
+    @include flex-column;
+    gap: 30px;
+
+    .buttonGuide {
+      padding: 20px 40px;
+      @include font_s18_w700;
+      white-space: nowrap;
+    }
+
+    .guides {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 16px;
+
+      .list {
+        position: relative;
+
+        .guide {
+          position: absolute;
+
+          .avatar {
+            border-radius: 50%;
+            border: 1px solid $colorWhite;
+          }
+
+          &:first-child {
+            top: 0;
+            left: 0;
+            z-index: 1;
+          }
+
+          &:nth-child(2) {
+            top: 0;
+            left: 26px;
+            z-index: 11;
+          }
+
+          &:nth-child(3) {
+            top: 0;
+            left: 52px;
+            z-index: 111;
+          }
+
+          &:nth-child(4) {
+            top: 0;
+            left: 78px;
+            z-index: 1111;
+          }
+        }
+      }
+    }
+
+    .count {
+      white-space: pre-wrap;
+      color: $colorGreyComment;
+      @include font_s16_w600;
+      line-height: 1.375;
+      @include max-width-mixin(106px);
+
+      &Accent {
+        color: $colorCta;
+        font-weight: 800;
+      }
+    }
+  }
 }
 
-.buttonGuide {
-  padding: 30px 40px;
-  @include font_s18_w700;
-  white-space: nowrap;
+.classAction {
+  margin-top: -95px;
+}
+
+.h2 {
+  @include visually_hidden;
 }

@@ -36,6 +36,11 @@
   overflow: hidden;
 }
 
+@mixin max-width-mixin($w) {
+  width: 100%;
+  max-width: $w;
+}
+
 // fonts
 @mixin font_s16_w700 {
   font-size: 16px;
