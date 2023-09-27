@@ -7,6 +7,7 @@ type TProps = {
   initValue: string;
   sendValue: (value: string) => void;
   title: string;
+  currentValue: string;
 };
 
 export const Select: FC<TProps> = ({
@@ -14,9 +15,10 @@ export const Select: FC<TProps> = ({
   initValue,
   sendValue,
   title,
+  currentValue,
 }) => {
-  const [selectedValue, setSelectedValue] = useState("");
-  const [isActive, setIsActive] = useState(false);
+  const [selectedValue, setSelectedValue] = useState<string>("");
+  const [isActive, setIsActive] = useState<boolean>(false);
 
   const handleSelectClick = () => {
     setIsActive(!isActive);
@@ -36,6 +38,11 @@ export const Select: FC<TProps> = ({
   useEffect(() => {
     if (initValue) setSelectedValue(initValue);
   }, [initValue]);
+
+  useEffect(() => {
+    if (currentValue === "-") setSelectedValue("-");
+  }, [currentValue]);
+
   return (
     <li className={style.select} onClick={handleSelectClick}>
       <p className={style.title}>{title}</p>
@@ -44,7 +51,7 @@ export const Select: FC<TProps> = ({
           isActive ? style.selectCurrentActive : ""
         }`}
       >
-        {selectedValue}
+        <span className={style.text}>{selectedValue}</span>
       </div>
       <ul className={`${style.options} ${isActive ? style.optionsActive : ""}`}>
         {options?.map((el, ind) => (

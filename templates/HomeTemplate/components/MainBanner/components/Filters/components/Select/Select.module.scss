@@ -3,7 +3,7 @@
 
 .select {
   position: relative;
-  width: 100%;
+  @include max-width-mixin(212px);
 
   &:not(:last-child)::after {
     position: absolute;
@@ -32,6 +32,12 @@
     margin-right: 24px;
     line-height: 1.5;
     @include font_s20_w600;
+
+    .text {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
 
     &:after {
       content: "";
@@ -62,6 +68,7 @@
     background: #ffff;
     border-radius: 5px;
     z-index: 100;
+    list-style-type: none;
 
     &Active {
       display: flex;

@@ -17,9 +17,15 @@
 
   .list {
     list-style-type: none;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  .message {
+    color: $colorText;
+    @include font_s24_w800;
+    text-align: center;
   }
 }

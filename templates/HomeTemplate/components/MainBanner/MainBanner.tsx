@@ -2,11 +2,19 @@ import { FC } from "react";
 
 import { Filters } from "./components";
 import { ButtonCta, H1, Banner } from "@components";
+import { useAppSelector, useAppDispatch } from "@servises/hooks";
+import { fetchMainGuidesList } from "@servises/slices/mainGuidesList";
+import { NextThunkDispatch } from "@servises/store";
 
 import style from "./MainBanner.module.scss";
 
 export const MainBanner: FC = () => {
-  const handleButtonClick = () => {};
+  const dispatch = useAppDispatch() as NextThunkDispatch;
+  const guides = useAppSelector((store) => store.guides.guides);
+
+  const handleButtonClick = () => {
+    dispatch(fetchMainGuidesList(guides));
+  };
 
   return (
     <Banner
@@ -20,7 +28,7 @@ export const MainBanner: FC = () => {
       <Filters />
       <ButtonCta
         type="button"
-        text="Search"
+        text="Reset Filters"
         handleClick={handleButtonClick}
         className={style.buttonGuide}
       />

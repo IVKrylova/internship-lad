@@ -18,18 +18,23 @@ export const Guides: FC = () => {
   const [buttonText, setButtonText] = useState<string>("See All Guides");
 
   const handleButtonClick = () => {
-    if (buttonText === "See All Guides") {
-      setButtonText("Hide Guides");
-      dispatch(fetchMainGuidesList(guides));
-    } else {
-      setButtonText("See All Guides");
-      dispatch(fetchMainGuidesList(guides.slice(0, 4)));
-    }
+
+console.log(buttonText)
+
+    buttonText === "See All Guides"
+      ? dispatch(fetchMainGuidesList(guides))
+      : dispatch(fetchMainGuidesList(guides.slice(0, 4)));
   };
 
   useEffect(() => {
     if (guides) dispatch(fetchMainGuidesList(guides.slice(0, 4)));
   }, [guides]);
+
+  useEffect(() => {
+    mainGuidesList?.length !== guides?.length
+      ? setButtonText("See All Guides")
+      : setButtonText("Hide Guides");
+  }, [mainGuidesList]);
 
   return (
     <section className={style.section} id="guides">
@@ -47,6 +52,9 @@ export const Guides: FC = () => {
           return <Guid key={el.id} guid={el} />;
         })}
       </ul>
+      {mainGuidesList?.length === 0 && (
+        <p className={style.message}>Nothing was found</p>
+      )}
     </section>
   );
 };
