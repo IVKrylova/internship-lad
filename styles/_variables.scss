@@ -4,9 +4,12 @@ $colorCta: #ff5029;
 $colorWhite: #fff;
 $colorLigthText: rgba(255, 255, 255, 0.8);
 $colorLine: rgba(255, 255, 255, 0.15);
-$colorGreyComment: rgba(11, 6, 20, 0.60);
-$bgColor: #FEF4F5;
+$colorGreyComment: rgba(11, 6, 20, 0.6);
+$bgColor: #fef4f5;
+$colorType: #FEF4F5;
 
 $boxShadow: 0px 30px 60px 0px rgba(198, 191, 191, 0.18);
 $cardShadow: 0px 30px 60px 0px rgba(198, 191, 191, 0.15),
+  0px -8px 20px 0px rgba(235, 235, 235, 0.15);
+$shadowArticle: 0px 30px 60px 0px rgba(198, 191, 191, 0.15),
   0px -8px 20px 0px rgba(235, 235, 235, 0.15);

@@ -50,7 +50,7 @@ export const GuidesBanner: FC = () => {
               })}
             </div>
             <p className={style.count}>
-              <span className={style.countAccent}>1000+</span>
+              <span className={style.countAccent}>1000+&nbsp;</span>
               tourist join us
             </p>
           </div>

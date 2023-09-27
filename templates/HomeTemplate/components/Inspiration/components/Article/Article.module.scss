@@ -1,0 +1,70 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.article {
+  border-radius: 20px;
+  background: $colorWhite;
+  box-shadow: $shadowArticle;
+  padding: 35px 30px;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &:first-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+
+    .img {
+      border-radius: 16px;
+    }
+
+    .description {
+      .type {
+        margin: 30px 0 25px;
+      }
+    }
+  }
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    .img {
+      border-radius: 20px;
+      width: 181px;
+      height: 243px;
+    }
+
+    .description {
+      .type {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .description {
+    .type {
+      background-color: $colorType;
+      padding: 8px 30px 8px 20px;
+      border-radius: 12px;
+      color: $colorCta;
+      @include font_s24_w700;
+      width: max-content;
+    }
+
+    .title {
+      @include font_s40_w700;
+      line-height: 1.3;
+      color: $colorText;
+      @include max-width-mixin(355px);
+
+      .link {
+        @include el_hover;
+      }
+    }
+  }
+}

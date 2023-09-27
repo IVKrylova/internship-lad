@@ -1,14 +1,26 @@
 import { FC } from "react";
 
-import { MainBanner, Guides, About, GuidesBanner } from "./components";
+import { TArticles } from "@types";
+import {
+  MainBanner,
+  Guides,
+  About,
+  GuidesBanner,
+  Inspiration,
+} from "./components";
 
-export const HomeTemplate: FC = () => {
+type TProps = {
+  articles: TArticles;
+}
+
+export const HomeTemplate: FC<TProps> = ({ articles }) => {
   return (
     <>
       <MainBanner />
       <Guides />
       <About />
       <GuidesBanner />
+      <Inspiration articles={articles} />
     </>
   );
 };
