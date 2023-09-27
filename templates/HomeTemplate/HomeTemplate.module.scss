@@ -9,3 +9,13 @@
   @include font_s20_w700;
   padding: 27px 32px;
 }
+
+.h2 {
+  @include visually_hidden;
+}
+
+.buttonGuide {
+  padding: 30px 40px;
+  @include font_s18_w700;
+  white-space: nowrap;
+}
