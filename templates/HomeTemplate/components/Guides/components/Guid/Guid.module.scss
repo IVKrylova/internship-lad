@@ -15,7 +15,7 @@
     .avatar {
       border-radius: 50%;
       border: 1px solid $colorCta;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center;
     }
 
