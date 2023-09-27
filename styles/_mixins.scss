@@ -77,6 +77,11 @@
   font-weight: 800;
 }
 
+@mixin font_s40_w700 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
 @mixin font_s64_w800 {
   font-size: 64px;
   font-weight: 800;

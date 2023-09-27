@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Banner, Filters, Guides } from "./components";
+import { Banner, Filters, Guides, About } from "./components";
 import { ButtonCta, H1 } from "@components";
 
 import style from "./HomeTemplate.module.scss";
@@ -29,6 +29,7 @@ export const HomeTemplate: FC = () => {
       </Banner>
 
       <Guides />
+      <About />
     </>
   );
 };
