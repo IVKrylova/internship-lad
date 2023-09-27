@@ -8,8 +8,6 @@ import { NavMenu } from "./components";
 import style from "./HeaderApp.module.scss";
 
 export const HeaderApp: FC = () => {
-  const handleButtonClick = () => {};
-
   return (
     <header className={style.header}>
       <div className={style.company}>
@@ -25,7 +23,7 @@ export const HeaderApp: FC = () => {
         </Link>
       </div>
       <NavMenu />
-      <ButtonCta type="button" text="Log in" handleClick={handleButtonClick} />
+      <Link href="/login" className={style.login}>Log in</Link>
     </header>
   );
 };

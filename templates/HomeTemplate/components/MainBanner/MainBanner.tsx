@@ -20,7 +20,7 @@ export const MainBanner: FC = () => {
       <Filters />
       <ButtonCta
         type="button"
-        text="I am a Tourist Guide"
+        text="Search"
         handleClick={handleButtonClick}
         className={style.buttonGuide}
       />

@@ -12,7 +12,7 @@ export const Guides: FC = () => {
   const handleButtonClick = () => {};
 
   return (
-    <section className={style.section}>
+    <section className={style.section} id="guides">
       <div className={style.header}>
         <H2 title="Guides for you!" />
         <ButtonCta

@@ -37,4 +37,13 @@
       }
     }
   }
+
+  .login {
+    background-color: $colorCta;
+    color: $colorWhite;
+    border-radius: 12px;
+    padding: 20px 30px;
+    @include font_s16_w700;
+    @include el_hover;
+  }
 }
