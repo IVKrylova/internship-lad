@@ -9,6 +9,7 @@ export const getMainArticles = async (): Promise<TArticles> => {
     );
     return res.data;
   } catch (err) {
-    throw new Error(`Error in the function getGuides: ${err}`);
+    console.error(`Error in the function getGuides: ${err}`);
+    return Promise.reject(err);
   }
 };

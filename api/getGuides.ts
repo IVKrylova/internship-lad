@@ -15,6 +15,7 @@ export const getGuides = async (): Promise<TGuides> => {
 
     return data1.concat(data2);
   } catch (err) {
-    throw new Error(`Error in the function getGuides: ${err}`);
+    console.error(`Error in the function getGuides: ${err}`);
+    return Promise.reject(err);
   }
 };
