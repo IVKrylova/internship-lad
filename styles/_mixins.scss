@@ -41,6 +41,16 @@
   max-width: $w;
 }
 
+@mixin input_err {
+  height: 16px;
+  visibility: hidden;
+  color: $colorError;
+
+  &Active {
+    visibility: visible;
+  }
+}
+
 // fonts
 @mixin font_s16_w700 {
   font-size: 16px;
@@ -55,6 +65,11 @@
 @mixin font_s18_w700 {
   font-size: 18px;
   font-weight: 700;
+}
+
+@mixin font_s20_w400 {
+  font-size: 20px;
+  font-weight: 400;
 }
 
 @mixin font_s20_w600 {

@@ -1,0 +1,27 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.block {
+  @include flex-column;
+  gap: 15px;
+
+  .label {
+    @include font_s20_w600;
+    color: $colorText;
+  }
+
+  .input {
+    border: solid 1px $colorLigthGrey;
+    border-radius: 3px;
+    @include font_s20_w400;
+    padding: 5px 10px;
+
+    &:focus {
+      border-color: $colorCta;
+    }
+  }
+
+  .error {
+    @include input_err;
+  }
+}

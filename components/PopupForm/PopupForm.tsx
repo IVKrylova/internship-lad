@@ -11,6 +11,7 @@ type TProps = {
   children: ReactNode;
   onSubmit: (evt: FormEvent<HTMLFormElement>) => void;
   isSuccessSubmit: boolean;
+  isValid: boolean;
 };
 
 export const PopupForm: FC<TProps> = ({
@@ -20,6 +21,7 @@ export const PopupForm: FC<TProps> = ({
   children,
   onSubmit,
   isSuccessSubmit,
+  isValid,
 }) => {
   const content = useRef<HTMLDivElement | null>(null);
 
@@ -63,9 +65,14 @@ export const PopupForm: FC<TProps> = ({
         </button>
         <h3 className={style.title}>{title}</h3>
         {!isSuccessSubmit && (
-          <form className={style.form} onSubmit={onSubmit}>
+          <form className={style.form} onSubmit={onSubmit} noValidate>
             {children}
-            <ButtonCta type="submit" text="Sign up" handleClick={() => {}} />
+            <ButtonCta
+              type="submit"
+              text="Sign up"
+              handleClick={() => {}}
+              disabled={!isValid}
+            />
           </form>
         )}
         {isSuccessSubmit && (

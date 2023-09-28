@@ -9,4 +9,9 @@
   padding: 20px 30px;
   @include font_s16_w700;
   @include el_hover;
+
+  &:disabled {
+    cursor: default;
+    opacity: .7;
+  }
 }

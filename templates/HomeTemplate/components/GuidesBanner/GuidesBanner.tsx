@@ -26,6 +26,13 @@ export const GuidesBanner: FC = () => {
 
   const handleFormSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
+    const req = {
+      name: values.name,
+      email: values.email,
+    }
+    console.log(req);
+    setIsSuccessSubmit(true);
+    resetForm();
   };
 
   return (
@@ -81,6 +88,7 @@ export const GuidesBanner: FC = () => {
         closePopup={closePopup}
         onSubmit={handleFormSubmit}
         isSuccessSubmit={isSuccessSubmit}
+        isValid={isValid}
       >
         <Input
           label="Name"
@@ -103,12 +111,13 @@ export const GuidesBanner: FC = () => {
           required={true}
         />
         <Checkbox
-          label=""
+          label="I agree to the transfer of personal data according to privacy policy and user agreement"
           required={true}
           name="policy"
           handleChange={handleChange}
           error={errors.policy}
           isValid={isValid}
+          isPolicy={true}
         />
       </PopupForm>
     </Banner>

@@ -25,11 +25,31 @@
     border-radius: 10px;
     padding: 30px;
     position: relative;
-  }
+    @include flex-column;
+    gap: 30px;
 
-  .buttonClose {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    .buttonClose {
+      @include reset-button;
+      @include el_hover;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+    }
+
+    .title {
+      @include font_s36_w800;
+      text-align: center;
+    }
+
+    .form {
+      @include flex-column;
+      gap: 15px;
+    }
+
+    .message {
+      @include font_s24_w700;
+      text-align: center;
+      color: $colorText;
+    }
   }
 }
