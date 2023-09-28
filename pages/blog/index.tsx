@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { ReactNode } from "react";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { GetStaticProps } from "next";
 
 import { BlogTemplate } from "@templates";
 import { LayoutApp } from "@layout";
