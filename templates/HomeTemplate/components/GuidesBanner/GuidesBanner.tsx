@@ -1,15 +1,32 @@
-import { FC } from "react";
+import { FC, useState, FormEvent } from "react";
 import Image from "next/image";
 
-import { ButtonCta, Banner, H2 } from "@components";
+import { ButtonCta, Banner, H2, PopupForm, Input, Checkbox } from "@components";
 import { useAppSelector } from "@servises/hooks";
+import { useFormAndValidation } from "@hooks";
 
 import style from "./GuidesBanner.module.scss";
 
 export const GuidesBanner: FC = () => {
   const guides = useAppSelector((store) => store.guides.guides);
+  const { isValid, handleChange, values, resetForm, errors } =
+    useFormAndValidation();
 
-  const handleClickBecomeGuide = () => {};
+  const [isOpenPopup, setIsOpenPopup] = useState<boolean>(false);
+  const [isSuccessSubmit, setIsSuccessSubmit] = useState<boolean>(false);
+
+  const handleClickBecomeGuide = () => {
+    setIsOpenPopup(true);
+    setIsSuccessSubmit(false);
+  };
+
+  const closePopup = () => {
+    setIsOpenPopup(false);
+  };
+
+  const handleFormSubmit = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+  };
 
   return (
     <Banner
@@ -57,6 +74,43 @@ export const GuidesBanner: FC = () => {
         </div>
       </div>
       <H2 title="Are you a Tourist Guide in Egypt?" className={style.h2} />
+
+      <PopupForm
+        title="Register as a Guide"
+        isOpenPopup={isOpenPopup}
+        closePopup={closePopup}
+        onSubmit={handleFormSubmit}
+        isSuccessSubmit={isSuccessSubmit}
+      >
+        <Input
+          label="Name"
+          name="name"
+          type="text"
+          handleChange={handleChange}
+          value={values.name}
+          error={errors.name}
+          isValid={isValid}
+          required={true}
+        />
+        <Input
+          label="Email"
+          name="email"
+          type="email"
+          handleChange={handleChange}
+          value={values.email}
+          error={errors.email}
+          isValid={isValid}
+          required={true}
+        />
+        <Checkbox
+          label=""
+          required={true}
+          name="policy"
+          handleChange={handleChange}
+          error={errors.policy}
+          isValid={isValid}
+        />
+      </PopupForm>
     </Banner>
   );
 };

@@ -106,3 +106,14 @@
     opacity: 0.6;
   }
 }
+
+@mixin popup_init_animation {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s linear;
+}
+
+@mixin popup_end_animation {
+  visibility: visible;
+  opacity: 1;
+}
