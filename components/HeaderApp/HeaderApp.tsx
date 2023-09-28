@@ -11,10 +11,10 @@ export const HeaderApp: FC = () => {
   return (
     <header className={style.header}>
       <div className={style.company}>
-        <Logo src="img/logo_dark.svg" width={144} heigth={36} />
+        <Logo src="/img/logo_dark.svg" width={144} heigth={36} />
         <Link href="/#search" className={style.search}>
           <Image
-            src="img/icon_search.svg"
+            src="/img/icon_search.svg"
             alt="icon search"
             width={24}
             height={24}

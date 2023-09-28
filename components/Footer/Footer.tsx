@@ -13,7 +13,7 @@ export const Footer: FC = () => {
       <div className={style.wrap}>
         <div className={style.content}>
           <div className={style.about}>
-            <Logo src="img/logo_light.svg" width={185} heigth={40} />
+            <Logo src="/img/logo_light.svg" width={185} heigth={40} />
             <p className={style.text}>
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit.
