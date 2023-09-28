@@ -8,5 +8,7 @@ export { Banner } from "./Banner";
 export { PopupForm } from "./PopupForm";
 export { Input } from "./Input";
 export { Checkbox } from "./Checkbox";
+export { HeaderAuth } from "./HeaderAuth";
+
 
 
