@@ -1,0 +1,48 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.h1 {
+  padding: 50px 0 100px;
+  text-align: center;
+}
+
+.mainList {
+  list-style-type: none;
+  counter-reset: num;
+  @include flex-column;
+  @include font_s20_w400;
+  gap: 15px;
+  padding-bottom: 50px;
+
+  .mainItem {
+    line-height: 1.2;
+
+    &::before {
+      content: counter(num) ".";
+      @include font_s20_w700;
+      padding-right: 10px;
+      counter-increment: num;
+    }
+
+    .subtitle {
+      @include font_s20_w700;
+      line-height: 1.2;
+    }
+
+    .subList {
+      padding-top: 15px;
+      @include flex-column;
+      gap: 10px;
+      counter-reset: subNum;
+      list-style-type: none;
+
+      .item {
+        &::before {
+          content: counter(num) "." counter(subNum);
+          counter-increment: subNum;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}

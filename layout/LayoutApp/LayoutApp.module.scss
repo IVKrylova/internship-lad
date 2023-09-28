@@ -1,10 +1,12 @@
 @import "@styles/_mixins";
 
 .wrap {
-  @include grid-1fr;
+  @include flex-column;
+  min-height: 100vh;
 
   .main {
     @include width_1360;
     margin: 0 auto;
+    @include grow-shrink;
   }
 }
