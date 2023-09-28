@@ -26,7 +26,7 @@ export const RESOURCES: TLink[] = [
   },
   {
     text: "Legal",
-    link: "/legal",
+    link: "/policy",
   },
   {
     text: "Blog",
@@ -34,7 +34,7 @@ export const RESOURCES: TLink[] = [
   },
   {
     text: "Help",
-    link: "/help",
+    link: "/policy",
   },
 ];
 

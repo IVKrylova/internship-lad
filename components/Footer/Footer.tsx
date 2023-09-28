@@ -31,7 +31,7 @@ export const Footer: FC = () => {
             <span className={style.accent}>EgyptTour</span>
           </p>
           <Link className={style.link} href="/policy">Privacy Policy</Link>
-          <Link className={style.link} href="/condition">Term of Condition</Link>
+          <Link className={style.link} href="/policy">Term of Condition</Link>
         </div>
       </div>
     </footer>
