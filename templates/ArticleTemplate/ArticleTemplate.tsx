@@ -16,13 +16,19 @@ export const ArticleTemplate: FC<TProps> = ({ article }) => {
 
   return (
     <>
-    <ButtonCta text="Go Back" type="button" handleClick={() => router.back()} />
+      <ButtonCta
+        text="Go Back"
+        type="button"
+        handleClick={() => router.back()}
+        className={style.button}
+      />
       <div className={style.title}>
         <Image
           width={400}
           height={300}
           alt={`image ${article.title}`}
           src={article.url}
+          className={style.img}
         />
         <H1 title={article.title} className={style.h1} />
       </div>
