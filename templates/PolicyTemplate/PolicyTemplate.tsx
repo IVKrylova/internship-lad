@@ -8,13 +8,13 @@ import style from "./PolicyTemplate.module.scss";
 export const PolicyTemplate: FC = () => {
   const router = useRouter();
 
-  const handleGoBack = () => {
-    router.back();
-  };
-
   return (
     <>
-      <ButtonCta text="Go Back" type="button" handleClick={handleGoBack} />
+      <ButtonCta
+        text="Go Back"
+        type="button"
+        handleClick={() => router.back()}
+      />
       <H1 title="Privacy Policy" className={style.h1} />
       <ol className={style.mainList}>
         <li className={style.mainItem}>
