@@ -1,0 +1,18 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.h1 {
+  padding: 50px 0 100px;
+  text-align: center;
+}
+
+.list {
+  @include flex-column;
+  gap: 50px;
+  list-style-type: none;
+}
+
+.button {
+  margin: 50px auto 100px;
+  width: 250px;
+}

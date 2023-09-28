@@ -1,0 +1,26 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.card {
+  display: flex;
+  box-shadow: $cardShadow;
+  padding: 30px;
+  border-radius: 20px;
+  gap: 30px;
+  align-items: center;
+
+  .description {
+    @include flex-column;
+    gap: 30px;
+
+    .title {
+      @include font_s36_w800;
+    }
+
+    .summary {
+      color: $colorText;
+      @include font_s24_w700;
+      line-height: 1.3;
+    }
+  }
+}

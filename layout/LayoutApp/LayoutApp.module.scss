@@ -8,5 +8,6 @@
     @include width_1360;
     margin: 0 auto;
     @include grow-shrink;
+    @include grid-1fr;
   }
 }

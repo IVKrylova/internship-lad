@@ -1,0 +1,1 @@
+export const MAX_COUNT_ARTICLES: number = 5000;
