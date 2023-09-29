@@ -2,9 +2,9 @@ import { FC } from "react";
 
 import { Logo } from "@components";
 
-import style from "./HeaderApp.module.scss";
+import style from "./HeaderAuth.module.scss";
 
-export const HeaderApp: FC = () => {
+export const HeaderAuth: FC = () => {
   return (
     <header className={style.header}>
       <Logo src="/img/logo_dark.svg" width={144} heigth={36} />

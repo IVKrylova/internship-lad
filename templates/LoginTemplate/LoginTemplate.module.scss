@@ -1,0 +1,24 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.buttonGoBack {
+max-width: max-content;
+max-height: 60px;
+}
+
+.h1 {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.form {
+  @include max-width-mixin(700px);
+  margin: 0 auto 100px;
+  @include flex-column;
+  gap: 15px;
+
+  .buttonSubmit {
+    width: 200px;
+    align-self: center;
+  }
+}

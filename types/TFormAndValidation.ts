@@ -11,10 +11,12 @@ export type TFormAndValidation = {
     name?: string;
     email?: string;
     policy?: boolean;
+    password?: string;
   };
   errors: {
     name?: string;
     email?: string;
     policy?: string;
+    password?: string;
   };
 }

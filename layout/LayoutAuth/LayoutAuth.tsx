@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 
 import { HeaderAuth, Footer } from '@components';
 
-import style from './LayoutApp.module.scss';
+import style from './LayoutAuth.module.scss';
 
 type TProps = {
   children: ReactNode;
