@@ -1,0 +1,8 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.message {
+  color: $colorError;
+  @include font_s20_w600;
+  text-align: center;
+}

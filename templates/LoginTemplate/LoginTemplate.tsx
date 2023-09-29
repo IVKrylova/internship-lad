@@ -1,14 +1,38 @@
-import { FC } from "react";
+import { FC, FormEvent, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-import { H1, ButtonCta, Input, InputPassword } from "@components";
+import { H1, ButtonCta, Input, InputPassword, ErrorMessage } from "@components";
 import { useFormAndValidation } from "@hooks";
+import { login } from "@api";
 
 import style from "./LoginTemplate.module.scss";
 
 export const LoginTemplate: FC = () => {
   const router = useRouter();
   const { isValid, errors, values, handleChange } = useFormAndValidation();
+
+  const [isActiveButton, setIsActiveButton] = useState<boolean>(true);
+  const [message, setMessage] = useState<string>("");
+
+  const handleFormSubmit = async (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+    setIsActiveButton(false);
+    setMessage("");
+
+    const token = await login(values.email, values.password);
+    if (token) {
+      setIsActiveButton(true);
+      localStorage.setItem("token", token);
+      router.push("/account");
+    } else {
+      setIsActiveButton(true);
+      setMessage("An error has occurred");
+    }
+  };
+
+  useEffect(() => {
+    isValid ? setIsActiveButton(true) : setIsActiveButton(false);
+  }, [isValid]);
 
   return (
     <>
@@ -19,7 +43,8 @@ export const LoginTemplate: FC = () => {
         className={style.buttonGoBack}
       />
       <H1 title="Authorization" className={style.h1} />
-      <form className={style.form} noValidate>
+      {message && <ErrorMessage message={message} />}
+      <form className={style.form} noValidate onSubmit={handleFormSubmit}>
         <Input
           name="email"
           type="email"
@@ -42,7 +67,7 @@ export const LoginTemplate: FC = () => {
           text="Log in"
           handleClick={() => {}}
           className={style.buttonSubmit}
-          disabled={!isValid}
+          disabled={!isActiveButton}
         />
       </form>
     </>

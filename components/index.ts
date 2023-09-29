@@ -10,3 +10,5 @@ export { Input } from "./Input";
 export { Checkbox } from "./Checkbox";
 export { HeaderAuth } from "./HeaderAuth";
 export { InputPassword } from "./InputPassword";
+export { ErrorMessage } from "./ErrorMessage";
+
