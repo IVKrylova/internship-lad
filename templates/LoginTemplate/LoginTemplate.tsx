@@ -1,5 +1,6 @@
 import { FC, FormEvent, useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 import { H1, ButtonCta, Input, InputPassword, ErrorMessage } from "@components";
 import { useFormAndValidation } from "@hooks";
@@ -20,7 +21,7 @@ export const LoginTemplate: FC = () => {
     setMessage("");
 
     const token = await login(values.email, values.password);
-    if (token && typeof token === 'string') {
+    if (token && typeof token === "string") {
       setIsActiveButton(true);
       localStorage.setItem("token", token);
       router.push("/account");
@@ -43,6 +44,12 @@ export const LoginTemplate: FC = () => {
         className={style.buttonGoBack}
       />
       <H1 title="Authorization" className={style.h1} />
+      <p className={style.textLink}>
+        <span>{`Need an account? `}</span>
+        <Link className={style.link} href="/signup">
+          Register now!
+        </Link>
+      </p>
       {message && <ErrorMessage message={message} />}
       <form className={style.form} noValidate onSubmit={handleFormSubmit}>
         <Input
