@@ -73,6 +73,12 @@
       ],
       "@types/*": [
         "types/*"
+      ],
+      "@utils": [
+        "utils"
+      ],
+      "@utils/*": [
+        "utils/*"
       ]
     }
   },
