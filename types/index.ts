@@ -5,3 +5,5 @@ export type { TContact, TAddress } from "./TContact";
 export type { TGuides, TGuid, GuidesData } from "./TGuides";
 export type { TArticle, TArticles } from "./TArticle";
 export type { TFormAndValidation } from "./TFormAndValidation";
+export type { TError } from "./TError";
+export type { TToken } from "./TToken";

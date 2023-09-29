@@ -1,13 +1,11 @@
 import axios, { AxiosResponse } from "axios";
 
-type TToken = {
-  token: string;
-};
+import { TError, TToken } from "@types";
 
 export const login = async (
   email: string | undefined,
   password: string | undefined
-): Promise<string> => {
+): Promise<string | TError> => {
   try {
     if (email && password) {
       const token: AxiosResponse<TToken> = await axios.post<TToken>(
@@ -23,6 +21,6 @@ export const login = async (
     }
   } catch (err: any) {
     console.error(`Error in the function login: ${err}`);
-    return err?.error;
+    return { error: err };
   }
 };

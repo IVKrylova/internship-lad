@@ -20,7 +20,7 @@ export const LoginTemplate: FC = () => {
     setMessage("");
 
     const token = await login(values.email, values.password);
-    if (token) {
+    if (token && typeof token === 'string') {
       setIsActiveButton(true);
       localStorage.setItem("token", token);
       router.push("/account");
