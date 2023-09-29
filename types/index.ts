@@ -7,3 +7,4 @@ export type { TArticle, TArticles } from "./TArticle";
 export type { TFormAndValidation } from "./TFormAndValidation";
 export type { TError } from "./TError";
 export type { TToken } from "./TToken";
+export type { TUser } from "./TUser";

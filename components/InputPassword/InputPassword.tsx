@@ -13,6 +13,7 @@ type TProps = {
   error: string | undefined;
   className?: string;
   isValid: boolean;
+  name: string;
 };
 
 export const InputPassword: FC<TProps> = ({
@@ -21,6 +22,7 @@ export const InputPassword: FC<TProps> = ({
   error,
   value,
   isValid,
+  name,
 }) => {
   const [srcImg, setSrcImg] = useState<string>("/img/icon_show_password.svg");
   const [typeButton, setTypeButton] = useState<"text" | "password">("password");
@@ -38,7 +40,7 @@ export const InputPassword: FC<TProps> = ({
   return (
     <div className={style.block}>
       <Input
-        name="password"
+        name={name}
         type={typeButton}
         label={label}
         handleChange={handleChange}

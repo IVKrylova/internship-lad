@@ -4,3 +4,5 @@ export { getArticles } from "./getArticles";
 export { getCurrentArticle } from "./getCurrentArticle";
 export { getAllPatchArticles } from "./getAllPatchArticles";
 export { login } from "./login";
+export { signup } from "./signup";
+export { auth } from "./auth";

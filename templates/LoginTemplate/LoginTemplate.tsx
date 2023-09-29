@@ -68,6 +68,7 @@ export const LoginTemplate: FC = () => {
           error={errors.password}
           value={values.password}
           isValid={isValid}
+          name="password"
         />
         <ButtonCta
           type="submit"
