@@ -4,7 +4,7 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 
 import { HomeTemplate } from "@templates";
 import { LayoutApp } from "@layout";
-import { TNextPageWithLayout, TGuides, TArticles } from "@types";
+import { TNextPageWithLayout, TGuides, TArticles, TError } from "@types";
 import { getGuides, getMainArticles } from "@api";
 import { NextThunkDispatch, wrapper } from "@servises/store";
 import { fetchGuides } from "@servises/slices/guides";
@@ -13,10 +13,12 @@ export const getStaticProps: GetStaticProps = wrapper.getStaticProps(
   (store) => async () => {
     const dispatch = store.dispatch as NextThunkDispatch;
 
-    const guides: TGuides = await getGuides();
-    dispatch(fetchGuides(guides));
+    const guides: TGuides | TError = await getGuides();
+    if (guides && Array.isArray(guides)) dispatch(fetchGuides(guides));
 
-    const articles: TArticles = await getMainArticles();
+    let articles: TArticles = [];
+    const res: TArticles | TError = await getMainArticles();
+    if (res && Array.isArray(res)) articles = res;
 
     return {
       props: { articles },

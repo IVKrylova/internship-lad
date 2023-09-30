@@ -7,3 +7,9 @@ export type TArticle = {
 };
 
 export type TArticles = TArticle[];
+
+export type TPathsArticle = {
+  params: {
+    id: string;
+  };
+}[];

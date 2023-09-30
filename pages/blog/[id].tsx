@@ -4,7 +4,7 @@ import { GetStaticProps, InferGetStaticPropsType, GetStaticPaths } from "next";
 
 import { ArticleTemplate } from "@templates";
 import { LayoutApp } from "@layout";
-import { TNextPageWithLayout, TArticle } from "@types";
+import { TNextPageWithLayout, TArticle, TPathsArticle } from "@types";
 import { wrapper } from "@servises/store";
 import { getAllPatchArticles, getCurrentArticle } from "@api";
 
@@ -16,9 +16,12 @@ const Article: TNextPageWithLayout<
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await getAllPatchArticles();
-  const paths = data?.map((el) => ({
-    params: { id: el },
-  }));
+  let paths: TPathsArticle = [];
+  if (Array.isArray(data)) {
+    paths = data?.map((el) => ({
+      params: { id: el },
+    }));
+  }
 
   return {
     paths,
@@ -31,7 +34,8 @@ export const getStaticProps: GetStaticProps = wrapper.getStaticProps(
     async ({ params }) => {
       let article: TArticle | null = null;
       if (typeof params?.id === "string") {
-        article = await getCurrentArticle(params.id);
+        const res = await getCurrentArticle(params.id);
+        if (res && "id" in res) article = res;
       }
 
       return {

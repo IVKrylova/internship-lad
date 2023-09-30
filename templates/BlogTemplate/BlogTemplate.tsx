@@ -20,7 +20,7 @@ export const BlogTemplate: FC = () => {
     if (countArticles < MAX_COUNT_ARTICLES) {
       const arr = structuredClone(articles);
       const res = await getArticles(countArticles);
-      if (res) dispatch(fetchArticles(arr.concat(res)));
+      if (res && Array.isArray(res)) dispatch(fetchArticles(arr.concat(res)));
       setCountArticles((prev) => prev + 10);
     }
   };
