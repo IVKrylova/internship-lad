@@ -4,3 +4,5 @@ export { BlogTemplate } from "./BlogTemplate";
 export { ArticleTemplate } from "./ArticleTemplate";
 export { LoginTemplate } from "./LoginTemplate";
 export { SignupTemplate } from "./SignupTemplate";
+export { AccountTemplate } from "./AccountTemplate";
+
