@@ -12,8 +12,12 @@ export const getGuides = async (): Promise<TGuides | TError> => {
     );
     const data1 = res1.data.data;
     const data2 = res2.data.data;
+    const guides = data1.concat(data2).map((el) => {
+      el.liked = false;
+      return el;
+    });
 
-    return data1.concat(data2);
+    return guides;
   } catch (err) {
     console.error(`Error in the function getGuides: ${err}`);
     return { error: err };

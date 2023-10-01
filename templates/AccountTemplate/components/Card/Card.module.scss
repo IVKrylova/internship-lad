@@ -4,33 +4,33 @@
 .card {
   border-radius: 15px;
   box-shadow: $cardShadow;
+  padding: 50px;
+  @include flex-column;
+  gap: 50px;
+  transition: 0.2s ease-in-out;
+  align-items: center;
+  position: relative;
+
+  &:hover {
+    box-shadow: $cardShadowHover;
+  }
+
+  .buttonLike {
+    position: absolute;
+    @include reset-button;
+    top: 25px;
+    right: 25px;
+    @include el_hover;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
 
   .link {
-    padding: 50px;
-    @include flex-column;
-    gap: 50px;
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-    align-items: center;
-    position: relative;
-
-    &:hover {
-      box-shadow: $cardShadowHover;
-    }
-
-    .buttonLike {
-      position: absolute;
-      @include reset-button;
-      top: 25px;
-      right: 25px;
-      @include el_hover;
-    }
-
-    .avatar {
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center;
-    }
+    @include el_hover;
 
     .name {
       @include font_s24_w700;
