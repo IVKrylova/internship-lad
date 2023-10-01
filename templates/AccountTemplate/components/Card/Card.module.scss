@@ -15,14 +15,6 @@
     box-shadow: $cardShadowHover;
   }
 
-  .buttonLike {
-    position: absolute;
-    @include reset-button;
-    top: 25px;
-    right: 25px;
-    @include el_hover;
-  }
-
   .avatar {
     border-radius: 50%;
     object-fit: cover;

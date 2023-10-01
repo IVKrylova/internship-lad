@@ -13,7 +13,7 @@ type TProps = {
 export const Guid: FC<TProps> = ({ guid }) => {
   return (
     <li className={style.guid}>
-      <Link href={`/guides/${guid.id}`} className={style.card}>
+      <Link href={`/account/${guid.id}`} className={style.card}>
         <Image
           alt={`photo ${guid.first_name} ${guid.last_name}`}
           src={guid.avatar}

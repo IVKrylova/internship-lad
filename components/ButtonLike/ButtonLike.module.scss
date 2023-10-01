@@ -1,0 +1,9 @@
+@import "@styles/_mixins";
+
+.buttonLike {
+  position: absolute;
+  @include reset-button;
+  top: 25px;
+  right: 25px;
+  @include el_hover;
+}

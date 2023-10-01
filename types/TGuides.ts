@@ -1,12 +1,12 @@
-export type TGuides = TGuid[];
+export type TGuides = TGuide[];
 
-export type TGuid = {
+export type TGuide = {
   id: number;
   email: string;
   first_name: string;
   last_name: string;
   avatar: string;
-  liked: boolean;
+  liked?: boolean;
 };
 
 export type GuidesData = {
@@ -20,3 +20,23 @@ export type GuidesData = {
     text: string;
   };
 };
+
+export type currentGuideData = {
+  data: {
+    id: number;
+    email: string;
+    first_name: string;
+    last_name: string;
+    avatar: string;
+  };
+  support: {
+    url: string;
+    text: string;
+  };
+};
+
+export type TPathsGuides = {
+  params: {
+    id: string;
+  };
+}[];

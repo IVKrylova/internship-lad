@@ -2,7 +2,13 @@ export type { TStepCard } from "./TStepCard";
 export type { TNextPageWithLayout } from "./TNextPageWithLayout";
 export type { TLink } from "./TLink";
 export type { TContact, TAddress } from "./TContact";
-export type { TGuides, TGuid, GuidesData } from "./TGuides";
+export type {
+  TGuides,
+  TGuide,
+  GuidesData,
+  TPathsGuides,
+  currentGuideData,
+} from "./TGuides";
 export type { TArticle, TArticles, TPathsArticle } from "./TArticle";
 export type { TFormAndValidation } from "./TFormAndValidation";
 export type { TError } from "./TError";
