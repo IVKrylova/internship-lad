@@ -17,23 +17,25 @@ export const LayoutApp: FC<TProps> = ({ children }) => {
   const router = useRouter();
   const { pathname } = router;
 
+  const [isLogin, setIsLogin] = useState<boolean>(false);
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     // В коммерческом приложении для проверки автризации нужно
     // отправлять запрос с токеном на сервер, но фейковое API
     // не предоставляет такой возможности. Я создала функцию проверки
     // совпадения токенов, т.к. корректный токен заранее известен
-    if (
-      (!token && pathname.includes("account")) ||
-      (token && !checkAuth(token) && pathname.includes("account"))
-    ) {
-      router.push("/login");
+    if (token && checkAuth(token)) {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+      if (pathname.includes("account")) router.push("/login");
     }
   }, []);
 
   return (
     <div className={`${style.wrap} ${inter.className}`}>
-      <HeaderApp />
+      <HeaderApp isLogin={isLogin} setIsLogin={setIsLogin} />
       <main className={style.main}>{children}</main>
       <Footer />
     </div>
