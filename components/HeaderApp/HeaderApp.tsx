@@ -2,8 +2,8 @@ import { FC, Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { ButtonCta, Logo } from "@components";
-import { NavMenu } from "./components";
+import { Logo } from "@components";
+import { ButtonExit, NavMenu } from "./components";
 
 import style from "./HeaderApp.module.scss";
 
@@ -13,11 +13,6 @@ type TProps = {
 };
 
 export const HeaderApp: FC<TProps> = ({ isLogin, setIsLogin }) => {
-  const handleExit = () => {
-    localStorage.clear();
-    setIsLogin(false);
-  };
-
   return (
     <header className={style.header}>
       <div className={style.company}>
@@ -38,16 +33,7 @@ export const HeaderApp: FC<TProps> = ({ isLogin, setIsLogin }) => {
           Log in
         </Link>
       )}
-      {isLogin && (
-        <button type="button" className={style.buttonExit} onClick={handleExit}>
-          <Image
-            alt="icon button exit"
-            src="/img/icon_exit.svg"
-            width={24}
-            height={24}
-          />
-        </button>
-      )}
+      {isLogin && <ButtonExit setIsLogin={setIsLogin} />}
     </header>
   );
 };
