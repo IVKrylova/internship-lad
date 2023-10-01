@@ -6,8 +6,8 @@ $colorLigthText: rgba(255, 255, 255, 0.8);
 $colorLine: rgba(255, 255, 255, 0.15);
 $colorGreyComment: rgba(11, 6, 20, 0.6);
 $bgColor: #fef4f5;
-$colorType: #FEF4F5;
-$colorOverlay: rgba(0, 0, 0, .3);
+$colorType: #fef4f5;
+$colorOverlay: rgba(0, 0, 0, 0.3);
 $colorError: #ff2400;
 
 $boxShadow: 0px 30px 60px 0px rgba(198, 191, 191, 0.18);
@@ -15,3 +15,5 @@ $cardShadow: 0px 30px 60px 0px rgba(198, 191, 191, 0.15),
   0px -8px 20px 0px rgba(235, 235, 235, 0.15);
 $shadowArticle: 0px 30px 60px 0px rgba(198, 191, 191, 0.15),
   0px -8px 20px 0px rgba(235, 235, 235, 0.15);
+$cardShadowHover: 0px 30px 60px 0px rgba(255, 80, 41, 0.15),
+  0px -8px 20px 0px rgba(255, 80, 41, 0.15);

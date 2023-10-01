@@ -1,0 +1,19 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.section {
+  padding: 150px 0;
+
+  .title {
+    padding-bottom: 100px;
+    text-align: center;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 30px;
+    list-style-type: none;
+  }
+}
