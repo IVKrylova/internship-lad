@@ -9,5 +9,6 @@
     margin: 0 auto;
     @include grow-shrink;
     @include grid-1fr;
+    @include media_1440;
   }
 }

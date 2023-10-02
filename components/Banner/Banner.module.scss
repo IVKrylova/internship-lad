@@ -4,9 +4,15 @@
 .section {
   position: relative;
 
+  .background {
+    @include media_1440 {
+      height: auto;
+    }
+  }
+
   .action {
     position: relative;
-    width: 91.2%;
+    width: 1240px;
     margin: -64px auto 0;
     border-radius: 24px;
     background: $colorWhite;
@@ -17,5 +23,10 @@
     align-items: center;
     z-index: 10;
     gap: 45px;
+
+    @include media_1440 {
+      margin: -64px 62px 0;
+      width: 900px;
+    }
   }
 }

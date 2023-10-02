@@ -10,6 +10,10 @@
   gap: 45px;
   align-items: center;
 
+  @include media_1440 {
+    width: 320px;
+  }
+
   .step {
     color: $colorText;
     @include font_s40_w700;

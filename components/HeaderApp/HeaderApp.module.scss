@@ -4,11 +4,14 @@
 .header {
   padding: 30px 4.4%;
   display: flex;
-  width: 100%;
   gap: 40px;
   align-items: center;
   @include width_1360;
   margin: 0 auto;
+
+  @include media_1440 {
+    padding: 30px 0;
+  }
 
   .company {
     @include grow-shrink;

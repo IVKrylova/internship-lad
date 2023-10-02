@@ -18,6 +18,11 @@
 
     .img {
       border-radius: 16px;
+
+      @include media_1440 {
+        width: 350px;
+        height: auto;
+      }
     }
 
     .description {

@@ -20,7 +20,11 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    justify-content: space-between;
+    justify-items: center;
+
+    @include media_1440 {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .message {

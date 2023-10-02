@@ -137,3 +137,11 @@
   visibility: visible;
   opacity: 1;
 }
+
+// media queries
+@mixin media_1440 {
+  @media screen and (max-width: 1440px) {
+    max-width: 1024px;
+    @content;
+  }
+}

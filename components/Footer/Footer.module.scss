@@ -13,6 +13,10 @@
     @include flex-column;
     gap: 90px;
 
+    @include media_1440 {
+      padding: 90px 0 40px;
+    }
+
     .content {
       width: 100%;
       display: grid;
