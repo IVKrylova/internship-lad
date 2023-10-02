@@ -1,10 +1,11 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect, FormEvent } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
 import { TGuide } from "@types";
-import { H1, ButtonCta, ButtonLike } from "@components";
+import { H1, ButtonCta, ButtonLike, PopupForm, Input } from "@components";
 import { useAppSelector } from "@servises/hooks";
+import { useFormAndValidation } from "@hooks";
 
 import style from "./GuideTemplate.module.scss";
 
@@ -15,8 +16,25 @@ type TProps = {
 export const GuideTemplate: FC<TProps> = ({ guide }) => {
   const router = useRouter();
   const guides = useAppSelector((store) => store.guides.guides);
+  const { isValid, handleChange, values, resetForm, errors } =
+    useFormAndValidation();
 
   const [liked, setLiked] = useState<boolean>(false);
+  const [isOpenPopup, setIsOpenPopup] = useState<boolean>(false);
+  const [isSuccessSubmit, setIsSuccessSubmit] = useState<boolean>(false);
+
+  const openPopup = () => {
+    setIsOpenPopup(true);
+    setIsSuccessSubmit(false);
+  };
+
+  const closePopup = () => {
+    setIsOpenPopup(false);
+  };
+
+  const handleFormSubmit = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+  };
 
   useEffect(() => {
     if (guide) {
@@ -50,6 +68,7 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
           width={300}
           height={300}
           className={style.avatar}
+          onClick={openPopup}
         />
         <p className={style.contact}>
           <span>{`Contact: `}</span>
@@ -68,6 +87,28 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
         alias deserunt consectetur praesentium sit eveniet labore! Praesentium
         sint nemo doloribus odio?
       </p>
+
+      <PopupForm
+        title="Update Avatar"
+        isOpenPopup={isOpenPopup}
+        closePopup={closePopup}
+        onSubmit={handleFormSubmit}
+        isSuccessSubmit={isSuccessSubmit}
+        isValid={isValid}
+        message="Your avatar has been updated!"
+        buttonText="Update"
+      >
+        <Input
+          label="Link to avatar"
+          name="avatar"
+          type="url"
+          handleChange={handleChange}
+          value={values.avatar}
+          error={errors.avatar}
+          isValid={isValid}
+          required={true}
+        />
+      </PopupForm>
     </>
   );
 };

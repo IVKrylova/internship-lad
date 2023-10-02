@@ -29,7 +29,7 @@ export const GuidesBanner: FC = () => {
     const req = {
       name: values.name,
       email: values.email,
-    }
+    };
     console.log(req);
     setIsSuccessSubmit(true);
     resetForm();
@@ -89,6 +89,8 @@ export const GuidesBanner: FC = () => {
         onSubmit={handleFormSubmit}
         isSuccessSubmit={isSuccessSubmit}
         isValid={isValid}
+        message="Your application has been sent successfully!"
+        buttonText="Sign up"
       >
         <Input
           label="Name"

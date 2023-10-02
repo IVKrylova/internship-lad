@@ -13,6 +13,7 @@ export type TFormAndValidation = {
     policy?: boolean;
     password?: string;
     repeatPassword?: string;
+    avatar?: string;
   };
   errors: {
     name?: string;
@@ -20,5 +21,6 @@ export type TFormAndValidation = {
     policy?: string;
     password?: string;
     repeatPassword?: string;
+    avatar?: string;
   };
 }

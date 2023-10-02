@@ -12,6 +12,8 @@ type TProps = {
   onSubmit: (evt: FormEvent<HTMLFormElement>) => void;
   isSuccessSubmit: boolean;
   isValid: boolean;
+  message: string;
+  buttonText: string;
 };
 
 export const PopupForm: FC<TProps> = ({
@@ -22,6 +24,8 @@ export const PopupForm: FC<TProps> = ({
   onSubmit,
   isSuccessSubmit,
   isValid,
+  message,
+  buttonText
 }) => {
   const content = useRef<HTMLDivElement | null>(null);
 
@@ -69,17 +73,13 @@ export const PopupForm: FC<TProps> = ({
             {children}
             <ButtonCta
               type="submit"
-              text="Sign up"
+              text={buttonText}
               handleClick={() => {}}
               disabled={!isValid}
             />
           </form>
         )}
-        {isSuccessSubmit && (
-          <p className={style.message}>
-            Your application has been sent successfully!
-          </p>
-        )}
+        {isSuccessSubmit && <p className={style.message}>{message}</p>}
       </div>
     </div>
   );
