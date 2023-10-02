@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 
 import { TGuide } from "@types";
 import { H1, ButtonCta, ButtonLike } from "@components";
+import { useAppSelector } from "@servises/hooks";
 
 import style from "./GuideTemplate.module.scss";
 
@@ -13,6 +14,7 @@ type TProps = {
 
 export const GuideTemplate: FC<TProps> = ({ guide }) => {
   const router = useRouter();
+  const guides = useAppSelector((store) => store.guides.guides);
 
   const [liked, setLiked] = useState<boolean>(false);
 
@@ -23,10 +25,10 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
         const item: TGuide = JSON.parse(guides).find(
           (el: TGuide) => el.id === guide.id
         );
-        if (item && item.liked) setLiked(item.liked);
+        if (item && item.liked !== undefined) setLiked(item.liked);
       }
     }
-  }, [guide]);
+  }, [guide, guides]);
 
   return (
     <>
