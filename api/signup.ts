@@ -17,7 +17,7 @@ export const signup = async (
       );
       return user.data;
     } else {
-      return Promise.reject("email or password are undefound");
+      return Promise.reject("email or password are undefined");
     }
   } catch (err: any) {
     console.error(`Error in the function signup: ${err}`);

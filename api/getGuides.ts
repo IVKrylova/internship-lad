@@ -1,13 +1,13 @@
 import axios, { AxiosResponse } from "axios";
 
-import { TGuides, GuidesData, TError } from "@types";
+import { TGuides, TGuidesData, TError } from "@types";
 
 export const getGuides = async (): Promise<TGuides | TError> => {
   try {
-    const res1: AxiosResponse<GuidesData> = await axios.get<GuidesData>(
+    const res1: AxiosResponse<TGuidesData> = await axios.get<TGuidesData>(
       `https://reqres.in/api/users?page=1`
     );
-    const res2: AxiosResponse<GuidesData> = await axios.get<GuidesData>(
+    const res2: AxiosResponse<TGuidesData> = await axios.get<TGuidesData>(
       `https://reqres.in/api/users?page=2`
     );
     const data1 = res1.data.data;

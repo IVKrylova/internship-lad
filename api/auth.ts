@@ -17,7 +17,7 @@ export const auth = async (
       );
       return token.data.token;
     } else {
-      return Promise.reject("email or password are undefound");
+      return Promise.reject("email or password are undefined");
     }
   } catch (err: any) {
     console.error(`Error in the function auth: ${err}`);

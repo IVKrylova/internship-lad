@@ -5,9 +5,9 @@ export type { TContact, TAddress } from "./TContact";
 export type {
   TGuides,
   TGuide,
-  GuidesData,
+  TGuidesData,
   TPathsGuides,
-  currentGuideData,
+  TCurrentGuideData,
   TResUpdateAvatar,
 } from "./TGuides";
 export type { TArticle, TArticles, TPathsArticle } from "./TArticle";

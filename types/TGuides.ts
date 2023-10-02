@@ -9,7 +9,7 @@ export type TGuide = {
   liked?: boolean;
 };
 
-export type GuidesData = {
+export type TGuidesData = {
   page: number;
   per_page: number;
   total: number;
@@ -21,7 +21,7 @@ export type GuidesData = {
   };
 };
 
-export type currentGuideData = {
+export type TCurrentGuideData = {
   data: {
     id: number;
     email: string;
