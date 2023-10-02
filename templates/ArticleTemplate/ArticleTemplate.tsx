@@ -1,9 +1,8 @@
 import { FC } from "react";
 import Image from "next/image";
-import { useRouter, NextRouter } from "next/router";
 
 import { TArticle } from "@types";
-import { H1, ButtonCta } from "@components";
+import { H1, ButtonGoBack } from "@components";
 
 import style from "./ArticleTemplate.module.scss";
 
@@ -12,16 +11,9 @@ type TProps = {
 };
 
 export const ArticleTemplate: FC<TProps> = ({ article }) => {
-  const router: NextRouter = useRouter();
-
   return (
     <>
-      <ButtonCta
-        text="Go Back"
-        type="button"
-        handleClick={() => router.back()}
-        className={style.button}
-      />
+      <ButtonGoBack />
       <div className={style.title}>
         <Image
           width={400}

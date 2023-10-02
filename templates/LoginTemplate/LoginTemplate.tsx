@@ -2,7 +2,14 @@ import { FC, FormEvent, useState, useEffect } from "react";
 import { useRouter, NextRouter } from "next/router";
 import Link from "next/link";
 
-import { H1, ButtonCta, Input, InputPassword, ErrorMessage } from "@components";
+import {
+  H1,
+  ButtonCta,
+  Input,
+  InputPassword,
+  ErrorMessage,
+  ButtonGoBack,
+} from "@components";
 import { useFormAndValidation } from "@hooks";
 import { login } from "@api";
 
@@ -37,12 +44,7 @@ export const LoginTemplate: FC = () => {
 
   return (
     <>
-      <ButtonCta
-        text="Go Back"
-        type="button"
-        handleClick={() => router.back()}
-        className={style.buttonGoBack}
-      />
+      <ButtonGoBack />
       <H1 title="Authorization" className={style.h1} />
       <p className={style.textLink}>
         <span>{`Need an account? `}</span>

@@ -12,3 +12,5 @@ export { HeaderAuth } from "./HeaderAuth";
 export { InputPassword } from "./InputPassword";
 export { ErrorMessage } from "./ErrorMessage";
 export { ButtonLike } from "./ButtonLike";
+export { ButtonGoBack } from "./ButtonGoBack";
+

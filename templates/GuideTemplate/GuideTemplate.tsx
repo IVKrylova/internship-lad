@@ -1,9 +1,8 @@
 import { FC, useState, useEffect, FormEvent } from "react";
 import Image from "next/image";
-import { useRouter, NextRouter } from "next/router";
 
 import { TGuide, TGuides } from "@types";
-import { H1, ButtonCta, ButtonLike, PopupForm, Input } from "@components";
+import { H1, ButtonGoBack, ButtonLike, PopupForm, Input } from "@components";
 import { useAppSelector, useAppDispatch } from "@servises/hooks";
 import { useFormAndValidation } from "@hooks";
 import { updateGuideAvatar } from "@servises/slices/guides";
@@ -17,7 +16,6 @@ type TProps = {
 };
 
 export const GuideTemplate: FC<TProps> = ({ guide }) => {
-  const router: NextRouter = useRouter();
   const guides: TGuides | null = useAppSelector((store) => store.guides.guides);
   const { isValid, handleChange, values, resetForm, errors } =
     useFormAndValidation();
@@ -84,12 +82,7 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
 
   return (
     <>
-      <ButtonCta
-        text="Go Back"
-        type="button"
-        handleClick={() => router.back()}
-        className={style.button}
-      />
+      <ButtonGoBack />
       <H1
         className={style.title}
         title={`${guide.first_name} ${guide.last_name}`}

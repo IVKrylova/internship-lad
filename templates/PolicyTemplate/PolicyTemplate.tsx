@@ -1,20 +1,13 @@
 import { FC } from "react";
-import { useRouter, NextRouter } from "next/router";
 
-import { H1, ButtonCta } from "@components";
+import { H1, ButtonGoBack } from "@components";
 
 import style from "./PolicyTemplate.module.scss";
 
 export const PolicyTemplate: FC = () => {
-  const router: NextRouter = useRouter();
-
   return (
     <>
-      <ButtonCta
-        text="Go Back"
-        type="button"
-        handleClick={() => router.back()}
-      />
+      <ButtonGoBack />
       <H1 title="Privacy Policy" className={style.h1} />
       <ol className={style.mainList}>
         <li className={style.mainItem}>
