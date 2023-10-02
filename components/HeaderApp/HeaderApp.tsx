@@ -33,7 +33,19 @@ export const HeaderApp: FC<TProps> = ({ isLogin, setIsLogin }) => {
           Log in
         </Link>
       )}
-      {isLogin && <ButtonExit setIsLogin={setIsLogin} />}
+      {isLogin && (
+        <>
+          <Link href="/account" className={style.account}>
+            <Image
+              src="/img/icon_account.svg"
+              alt="icon account"
+              width={30}
+              height={30}
+            />
+          </Link>
+          <ButtonExit setIsLogin={setIsLogin} />
+        </>
+      )}
     </header>
   );
 };
