@@ -21,10 +21,14 @@ export const mainGuidesListSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(HYDRATE, (state, action: any) => {
-      return {
+      const nextState = {
         ...state,
         ...action.payload.mainGuidesList,
-      };
+      }
+
+      if (state.mainGuidesList) nextState.mainGuidesList = state.mainGuidesList;
+
+      return nextState;
     });
   },
 });

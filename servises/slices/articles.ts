@@ -21,10 +21,14 @@ export const articlesSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(HYDRATE, (state, action: any) => {
-      return {
+      const nextState = {
         ...state,
         ...action.payload.articles,
-      };
+      }
+
+      if (state.articles) nextState.articles = state.articles;
+
+      return nextState;
     });
   },
 });
