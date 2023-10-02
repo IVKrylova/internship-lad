@@ -91,6 +91,7 @@ export const GuidesBanner: FC = () => {
         isValid={isValid}
         message="Your application has been sent successfully!"
         buttonText="Sign up"
+        error=""
       >
         <Input
           label="Name"

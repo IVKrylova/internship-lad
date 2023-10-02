@@ -14,6 +14,7 @@ type TProps = {
   isValid: boolean;
   message: string;
   buttonText: string;
+  error: string;
 };
 
 export const PopupForm: FC<TProps> = ({
@@ -25,7 +26,8 @@ export const PopupForm: FC<TProps> = ({
   isSuccessSubmit,
   isValid,
   message,
-  buttonText
+  buttonText,
+  error,
 }) => {
   const content = useRef<HTMLDivElement | null>(null);
 
@@ -68,6 +70,7 @@ export const PopupForm: FC<TProps> = ({
           />
         </button>
         <h3 className={style.title}>{title}</h3>
+        {error && <p className={style.error}>{error}</p>}
         {!isSuccessSubmit && (
           <form className={style.form} onSubmit={onSubmit} noValidate>
             {children}

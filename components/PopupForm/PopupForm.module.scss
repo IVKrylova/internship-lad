@@ -41,6 +41,13 @@
       text-align: center;
     }
 
+    .error {
+      @include font_s20_w400;
+      color: $colorError;
+      padding: 30px 0;
+      text-align: center;
+    }
+
     .form {
       @include flex-column;
       gap: 15px;

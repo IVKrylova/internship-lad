@@ -28,6 +28,7 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
   const [isSuccessSubmit, setIsSuccessSubmit] = useState<boolean>(false);
   const [flag, setFlag] = useState<boolean>(false);
   const [avatar, setAvatar] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
   const openPopup = () => {
     setIsOpenPopup(true);
@@ -36,6 +37,7 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
 
   const closePopup = () => {
     setIsOpenPopup(false);
+    setError("");
   };
 
   const handleFormSubmit = async (evt: FormEvent<HTMLFormElement>) => {
@@ -46,6 +48,8 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
       resetForm();
       dispatch(updateGuideAvatar({ id: guide.id, avatar: res }));
       setFlag(true);
+    } else {
+      setError("Error");
     }
   };
 
@@ -123,6 +127,7 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
         isValid={isValid}
         message="Your avatar has been updated!"
         buttonText="Update"
+        error={error}
       >
         <Input
           label="Link to avatar"
