@@ -47,11 +47,14 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
         <Image
           alt={`photo ${guide.first_name} ${guide.last_name}`}
           src={guide.avatar}
-          width={200}
-          height={200}
+          width={300}
+          height={300}
           className={style.avatar}
         />
-        <p className={style.contact}>{`Contact: ${guide.email}`}</p>
+        <p className={style.contact}>
+          <span>{`Contact: `}</span>
+          <span className={style.accent}>{guide.email}</span>
+        </p>
       </div>
       <p className={style.text}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eius
