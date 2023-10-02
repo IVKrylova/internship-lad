@@ -42,14 +42,19 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
 
   const handleFormSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    const res = await updateAvatar(guide.id, values.avatar);
-    if (res && typeof res === "string") {
-      setIsSuccessSubmit(true);
-      resetForm();
-      dispatch(updateGuideAvatar({ id: guide.id, avatar: res }));
-      setFlag(true);
+    if (values.avatar) {
+      const res = await updateAvatar(guide.id, values.avatar);
+      if (res && typeof res === "string") {
+        setIsSuccessSubmit(true);
+        resetForm();
+        dispatch(updateGuideAvatar({ id: guide.id, avatar: res }));
+        setFlag(true);
+        setError("");
+      } else {
+        setError("Error");
+      }
     } else {
-      setError("Error");
+      setError("Avatar is empty");
     }
   };
 

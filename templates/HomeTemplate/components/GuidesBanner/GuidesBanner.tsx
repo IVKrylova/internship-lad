@@ -14,6 +14,7 @@ export const GuidesBanner: FC = () => {
 
   const [isOpenPopup, setIsOpenPopup] = useState<boolean>(false);
   const [isSuccessSubmit, setIsSuccessSubmit] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
   const handleClickBecomeGuide = () => {
     setIsOpenPopup(true);
@@ -22,17 +23,23 @@ export const GuidesBanner: FC = () => {
 
   const closePopup = () => {
     setIsOpenPopup(false);
+    setError("");
   };
 
   const handleFormSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    const req = {
-      name: values.name,
-      email: values.email,
-    };
-    console.log(req);
-    setIsSuccessSubmit(true);
-    resetForm();
+    if (values.name && values.email) {
+      const req = {
+        name: values.name,
+        email: values.email,
+      };
+      console.log(req);
+      setIsSuccessSubmit(true);
+      resetForm();
+      setError("");
+    } else {
+      setError("Fields ara empty");
+    }
   };
 
   return (
@@ -91,7 +98,7 @@ export const GuidesBanner: FC = () => {
         isValid={isValid}
         message="Your application has been sent successfully!"
         buttonText="Sign up"
-        error=""
+        error={error}
       >
         <Input
           label="Name"
