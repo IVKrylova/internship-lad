@@ -27,6 +27,7 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
   const [isOpenPopup, setIsOpenPopup] = useState<boolean>(false);
   const [isSuccessSubmit, setIsSuccessSubmit] = useState<boolean>(false);
   const [flag, setFlag] = useState<boolean>(false);
+  const [avatar, setAvatar] = useState<string>("");
 
   const openPopup = () => {
     setIsOpenPopup(true);
@@ -56,6 +57,7 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
           (el: TGuide) => el.id === guide.id
         );
         if (item && item.liked !== undefined) setLiked(item.liked);
+        if (item) setAvatar(item.avatar);
       }
     }
   }, [guide, guides]);
@@ -63,6 +65,10 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
   useEffect(() => {
     if (flag) {
       localStorage.setItem("guides", JSON.stringify(guides));
+      const item: TGuide | undefined = guides?.find(
+        (el: TGuide) => el.id === guide.id
+      );
+      if (item) setAvatar(item.avatar);
       setFlag(false);
     }
   }, [flag]);
@@ -83,11 +89,12 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
         <ButtonLike id={guide.id} liked={liked} />
         <Image
           alt={`photo ${guide.first_name} ${guide.last_name}`}
-          src={guide.avatar}
+          src={avatar ? avatar : guide.avatar}
           width={300}
           height={300}
           className={style.avatar}
           onClick={openPopup}
+          priority
         />
         <p className={style.contact}>
           <span>{`Contact: `}</span>
