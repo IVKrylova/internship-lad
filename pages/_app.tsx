@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
 import { NextPage } from "next";
+import Head from "next/head";
 
 import { wrapper } from "@servises/store";
 
@@ -21,7 +22,19 @@ const WrappedApp = ({ Component, ...pageProps }: TProps) => {
   const getLayout = Component.getLayout || ((page: ReactNode) => page);
 
   return (
-    <Provider store={store}>{getLayout(<Component {...props} />)}</Provider>
+    <Provider store={store}>
+      <Head>
+        <title>EgyptTour</title>
+        <link rel="icon" href="favicon.ico" sizes="any" />
+        <link rel="icon" href="icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+        <meta
+          name="description"
+          content="Приложение для отбора на стажировку в Lad"
+        />
+      </Head>
+      {getLayout(<Component {...props} />)}
+    </Provider>
   );
 };
 
