@@ -4,11 +4,11 @@ import { HYDRATE } from "next-redux-wrapper";
 import { TArticles } from "@types";
 
 interface articlesState {
-  articles: TArticles;
+  articles: TArticles | null;
 }
 
 const initialState: articlesState = {
-  articles: [],
+  articles: null,
 };
 
 export const articlesSlice = createSlice({

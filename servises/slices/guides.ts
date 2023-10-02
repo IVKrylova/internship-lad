@@ -5,11 +5,11 @@ import { TGuides } from "@types";
 import { toggleLikeGuide, updateAvatar } from "@utils";
 
 interface guidesState {
-  guides: TGuides;
+  guides: TGuides | null;
 }
 
 const initialState: guidesState = {
-  guides: [],
+  guides: null,
 };
 
 export const guidesSlice = createSlice({

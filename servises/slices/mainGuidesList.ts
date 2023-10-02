@@ -4,11 +4,11 @@ import { HYDRATE } from "next-redux-wrapper";
 import { TGuides } from "@types";
 
 interface mainGuidesListState {
-  mainGuidesList: TGuides;
+  mainGuidesList: TGuides | null;
 }
 
 const initialState: mainGuidesListState = {
-  mainGuidesList: [],
+  mainGuidesList: null,
 };
 
 export const mainGuidesListSlice = createSlice({

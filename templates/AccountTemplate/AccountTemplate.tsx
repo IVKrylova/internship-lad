@@ -11,7 +11,7 @@ import { fetchGuides } from "@servises/slices/guides";
 import style from "./AccountTemplate.module.scss";
 
 export const AccountTemplate: FC = () => {
-  const guides: TGuides = useAppSelector((store) => store.guides.guides);
+  const guides: TGuides | null = useAppSelector((store) => store.guides.guides);
   const dispatch = useAppDispatch() as NextThunkDispatch;
 
   const fetchData = async () => {
@@ -33,8 +33,10 @@ export const AccountTemplate: FC = () => {
         "liked" in arr[0]
       ) {
         dispatch(fetchGuides(arr));
+      } else {
+        fetchData();
       }
-    } else if (guides.length === 0) {
+    } else if (!guides || guides.length === 0) {
       fetchData();
     }
   }, []);
