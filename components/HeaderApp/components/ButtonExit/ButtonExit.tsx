@@ -21,9 +21,9 @@ export const ButtonExit: FC<TProps> = ({ setIsLogin }) => {
   const handleExit = () => {
     localStorage.clear();
     setIsLogin(false);
-    dispatch(fetchArticles([]));
-    dispatch(fetchGuides([]));
-    dispatch(fetchMainGuidesList([]));
+    dispatch(fetchArticles(null));
+    dispatch(fetchGuides(null));
+    dispatch(fetchMainGuidesList(null));
     router.push("/login");
   };
 
