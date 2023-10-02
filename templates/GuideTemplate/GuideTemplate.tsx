@@ -4,8 +4,11 @@ import { useRouter } from "next/router";
 
 import { TGuide } from "@types";
 import { H1, ButtonCta, ButtonLike, PopupForm, Input } from "@components";
-import { useAppSelector } from "@servises/hooks";
+import { useAppSelector, useAppDispatch } from "@servises/hooks";
 import { useFormAndValidation } from "@hooks";
+import { updateGuideAvatar } from "@servises/slices/guides";
+import { NextThunkDispatch } from "@servises/store";
+import { updateAvatar } from "@api";
 
 import style from "./GuideTemplate.module.scss";
 
@@ -18,10 +21,12 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
   const guides = useAppSelector((store) => store.guides.guides);
   const { isValid, handleChange, values, resetForm, errors } =
     useFormAndValidation();
+  const dispatch = useAppDispatch() as NextThunkDispatch;
 
   const [liked, setLiked] = useState<boolean>(false);
   const [isOpenPopup, setIsOpenPopup] = useState<boolean>(false);
   const [isSuccessSubmit, setIsSuccessSubmit] = useState<boolean>(false);
+  const [flag, setFlag] = useState<boolean>(false);
 
   const openPopup = () => {
     setIsOpenPopup(true);
@@ -32,8 +37,15 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
     setIsOpenPopup(false);
   };
 
-  const handleFormSubmit = (evt: FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
+    const res = await updateAvatar(guide.id, values.avatar);
+    if (res && typeof res === "string") {
+      setIsSuccessSubmit(true);
+      resetForm();
+      dispatch(updateGuideAvatar({ id: guide.id, avatar: res }));
+      setFlag(true);
+    }
   };
 
   useEffect(() => {
@@ -47,6 +59,13 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
       }
     }
   }, [guide, guides]);
+
+  useEffect(() => {
+    if (flag) {
+      localStorage.setItem("guides", JSON.stringify(guides));
+      setFlag(false);
+    }
+  }, [flag]);
 
   return (
     <>

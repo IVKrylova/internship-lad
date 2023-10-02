@@ -40,3 +40,8 @@ export type TPathsGuides = {
     id: string;
   };
 }[];
+
+export type TResUpdateAvatar = {
+  avatar: string;
+  updatedAt: string;
+};

@@ -8,6 +8,7 @@ export type {
   GuidesData,
   TPathsGuides,
   currentGuideData,
+  TResUpdateAvatar,
 } from "./TGuides";
 export type { TArticle, TArticles, TPathsArticle } from "./TArticle";
 export type { TFormAndValidation } from "./TFormAndValidation";

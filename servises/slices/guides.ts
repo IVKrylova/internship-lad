@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
 
 import { TGuides } from "@types";
-import { toggleLikeGuide } from "@utils";
+import { toggleLikeGuide, updateAvatar } from "@utils";
 
 interface guidesState {
   guides: TGuides;
@@ -22,6 +22,13 @@ export const guidesSlice = createSlice({
     likeGuide(state, action: PayloadAction<any>) {
       state.guides = toggleLikeGuide(state.guides, action.payload);
     },
+    updateGuideAvatar(state, action: PayloadAction<any>) {
+      state.guides = updateAvatar(
+        state.guides,
+        action.payload.id,
+        action.payload.avatar,
+      );
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(HYDRATE, (state, action: any) => {
@@ -37,4 +44,4 @@ export const guidesSlice = createSlice({
   },
 });
 
-export const { fetchGuides, likeGuide } = guidesSlice.actions;
+export const { fetchGuides, likeGuide, updateGuideAvatar } = guidesSlice.actions;

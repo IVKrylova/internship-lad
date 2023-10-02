@@ -8,3 +8,4 @@ export { signup } from "./signup";
 export { auth } from "./auth";
 export { getAllPatchGuides } from "./getAllPatchGuides";
 export { getCurrentGuide } from "./getCurrentGuide";
+export { updateAvatar } from "./updateAvatar";
