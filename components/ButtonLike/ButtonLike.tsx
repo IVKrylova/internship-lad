@@ -1,10 +1,9 @@
-import { FC, MouseEvent } from "react";
+import { FC, MouseEvent, useEffect, useState } from "react";
 import Image from "next/image";
 
 import { useAppDispatch, useAppSelector } from "@servises/hooks";
-import { fetchGuides } from "@servises/slices/guides";
+import { likeGuide } from "@servises/slices/guides";
 import { NextThunkDispatch } from "@servises/store";
-import { toggleLikeGuide } from "@utils";
 
 import style from "./ButtonLike.module.scss";
 
@@ -17,12 +16,20 @@ export const ButtonLike: FC<TProps> = ({ id, liked }) => {
   const dispatch = useAppDispatch() as NextThunkDispatch;
   const guides = useAppSelector((store) => store.guides.guides);
 
+  const [flag, setFlag] = useState<boolean>(false);
+
   const toggleLike = (evt: MouseEvent<HTMLButtonElement>) => {
     const id = +evt.currentTarget.id;
-    const arr = toggleLikeGuide(structuredClone(guides), id);
-    dispatch(fetchGuides(arr));
-    localStorage.setItem("guides", JSON.stringify(arr));
+    dispatch(likeGuide(id));
+    setFlag(true);
   };
+
+  useEffect(() => {
+    if (flag) {
+      localStorage.setItem("guides", JSON.stringify(guides));
+      setFlag(false);
+    }
+  }, [flag]);
 
   return (
     <button
