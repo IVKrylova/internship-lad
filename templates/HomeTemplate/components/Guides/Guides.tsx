@@ -6,13 +6,14 @@ import { Guid } from "./components";
 import { fetchMainGuidesList } from "@servises/slices/mainGuidesList";
 import { NextThunkDispatch } from "@servises/store";
 import { fetchGuides } from "@servises/slices/guides";
+import { TGuides } from "@types";
 
 import style from "./Guides.module.scss";
 
 export const Guides: FC = () => {
   const dispatch = useAppDispatch() as NextThunkDispatch;
-  const guides = useAppSelector((store) => store.guides.guides);
-  const mainGuidesList = useAppSelector(
+  const guides: TGuides | null = useAppSelector((store) => store.guides.guides);
+  const mainGuidesList: TGuides | null = useAppSelector(
     (store) => store.mainGuidesList.mainGuidesList
   );
 

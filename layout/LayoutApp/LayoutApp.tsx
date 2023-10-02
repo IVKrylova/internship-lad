@@ -1,6 +1,6 @@
 import { FC, ReactNode, useEffect, useState } from "react";
 import { Inter } from "next/font/google";
-import { useRouter } from "next/router";
+import { useRouter, NextRouter  } from "next/router";
 
 import { HeaderApp, Footer } from "@components";
 import { checkAuth } from "@utils";
@@ -14,7 +14,7 @@ type TProps = {
 const inter = Inter({ subsets: ["latin"] });
 
 export const LayoutApp: FC<TProps> = ({ children }) => {
-  const router = useRouter();
+  const router: NextRouter = useRouter();
   const { pathname } = router;
 
   const [isLogin, setIsLogin] = useState<boolean>(false);

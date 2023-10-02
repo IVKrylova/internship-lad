@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "@servises/hooks";
 import { likeGuide } from "@servises/slices/guides";
 import { NextThunkDispatch } from "@servises/store";
+import { TGuides } from "@types";
 
 import style from "./ButtonLike.module.scss";
 
@@ -14,7 +15,7 @@ type TProps = {
 
 export const ButtonLike: FC<TProps> = ({ id, liked }) => {
   const dispatch = useAppDispatch() as NextThunkDispatch;
-  const guides = useAppSelector((store) => store.guides.guides);
+  const guides: TGuides | null = useAppSelector((store) => store.guides.guides);
 
   const [flag, setFlag] = useState<boolean>(false);
 

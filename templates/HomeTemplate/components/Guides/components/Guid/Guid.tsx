@@ -2,12 +2,12 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { TGuid } from "@types";
+import { TGuide } from "@types";
 
 import style from "./Guid.module.scss";
 
 type TProps = {
-  guid: TGuid;
+  guid: TGuide;
 };
 
 export const Guid: FC<TProps> = ({ guid }) => {

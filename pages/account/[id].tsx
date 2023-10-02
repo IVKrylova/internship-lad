@@ -4,7 +4,7 @@ import { GetStaticProps, InferGetStaticPropsType, GetStaticPaths } from "next";
 
 import { GuideTemplate } from "@templates";
 import { LayoutApp } from "@layout";
-import { TNextPageWithLayout, TGuide, TPathsGuides } from "@types";
+import { TNextPageWithLayout, TGuide, TPathsGuides, TError } from "@types";
 import { wrapper } from "@servises/store";
 import { getAllPatchGuides, getCurrentGuide } from "@api";
 
@@ -15,7 +15,7 @@ const Guide: TNextPageWithLayout<
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const data = await getAllPatchGuides();
+  const data: string[] | TError = await getAllPatchGuides();
   let paths: TPathsGuides = [];
   if (Array.isArray(data)) {
     paths = data?.map((el) => ({
@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps = wrapper.getStaticProps(
     async ({ params }) => {
       let guide: TGuide | null = null;
       if (typeof params?.id === "string") {
-        const res = await getCurrentGuide(params.id);
+        const res: TGuide | TError = await getCurrentGuide(params.id);
         if (res && "id" in res) guide = res;
       }
 

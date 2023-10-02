@@ -1,5 +1,5 @@
 import { FC, FormEvent, useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useRouter, NextRouter } from "next/router";
 import Link from "next/link";
 
 import { H1, ButtonCta, Input, InputPassword, ErrorMessage } from "@components";
@@ -9,7 +9,7 @@ import { login } from "@api";
 import style from "./LoginTemplate.module.scss";
 
 export const LoginTemplate: FC = () => {
-  const router = useRouter();
+  const router: NextRouter = useRouter();
   const { isValid, errors, values, handleChange } = useFormAndValidation();
 
   const [isActiveButton, setIsActiveButton] = useState<boolean>(true);

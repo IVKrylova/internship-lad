@@ -4,11 +4,12 @@ import Image from "next/image";
 import { ButtonCta, Banner, H2, PopupForm, Input, Checkbox } from "@components";
 import { useAppSelector } from "@servises/hooks";
 import { useFormAndValidation } from "@hooks";
+import { TGuides } from "@types";
 
 import style from "./GuidesBanner.module.scss";
 
 export const GuidesBanner: FC = () => {
-  const guides = useAppSelector((store) => store.guides.guides);
+  const guides: TGuides | null = useAppSelector((store) => store.guides.guides);
   const { isValid, handleChange, values, resetForm, errors } =
     useFormAndValidation();
 

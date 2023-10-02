@@ -1,10 +1,10 @@
 import { FC } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import { TArticle } from "@types";
 
 import style from "./Article.module.scss";
-import Image from "next/image";
-import Link from "next/link";
 
 type TProps = {
   el: TArticle;

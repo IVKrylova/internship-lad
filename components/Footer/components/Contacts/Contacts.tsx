@@ -2,7 +2,6 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { TLink } from "@types";
 import { ADDRESS, CONTACTS } from "./constants";
 
 import style from "./Contacts.module.scss";

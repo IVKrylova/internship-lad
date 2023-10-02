@@ -5,12 +5,13 @@ import { ButtonCta, H1, Banner } from "@components";
 import { useAppSelector, useAppDispatch } from "@servises/hooks";
 import { fetchMainGuidesList } from "@servises/slices/mainGuidesList";
 import { NextThunkDispatch } from "@servises/store";
+import { TGuides } from "@types";
 
 import style from "./MainBanner.module.scss";
 
 export const MainBanner: FC = () => {
   const dispatch = useAppDispatch() as NextThunkDispatch;
-  const guides = useAppSelector((store) => store.guides.guides);
+  const guides: TGuides | null = useAppSelector((store) => store.guides.guides);
 
   const handleButtonClick = () => {
     dispatch(fetchMainGuidesList(guides));

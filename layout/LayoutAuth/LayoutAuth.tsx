@@ -1,6 +1,6 @@
 import { FC, ReactNode, useEffect } from "react";
 import { Inter } from "next/font/google";
-import { useRouter } from "next/router";
+import { useRouter, NextRouter  } from "next/router";
 
 import { HeaderAuth, Footer } from "@components";
 import { checkAuth } from "@utils";
@@ -14,7 +14,7 @@ type TProps = {
 const inter = Inter({ subsets: ["latin"] });
 
 export const LayoutAuth: FC<TProps> = ({ children }) => {
-  const router = useRouter();
+  const router: NextRouter  = useRouter();
 
   useEffect(() => {
     const token = localStorage.getItem("token");

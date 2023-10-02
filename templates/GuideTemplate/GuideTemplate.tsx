@@ -1,8 +1,8 @@
 import { FC, useState, useEffect, FormEvent } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter, NextRouter } from "next/router";
 
-import { TGuide } from "@types";
+import { TGuide, TGuides } from "@types";
 import { H1, ButtonCta, ButtonLike, PopupForm, Input } from "@components";
 import { useAppSelector, useAppDispatch } from "@servises/hooks";
 import { useFormAndValidation } from "@hooks";
@@ -17,8 +17,8 @@ type TProps = {
 };
 
 export const GuideTemplate: FC<TProps> = ({ guide }) => {
-  const router = useRouter();
-  const guides = useAppSelector((store) => store.guides.guides);
+  const router: NextRouter = useRouter();
+  const guides: TGuides | null = useAppSelector((store) => store.guides.guides);
   const { isValid, handleChange, values, resetForm, errors } =
     useFormAndValidation();
   const dispatch = useAppDispatch() as NextThunkDispatch;

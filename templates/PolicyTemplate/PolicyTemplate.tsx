@@ -1,12 +1,12 @@
 import { FC } from "react";
-import { useRouter } from "next/router";
+import { useRouter, NextRouter } from "next/router";
 
 import { H1, ButtonCta } from "@components";
 
 import style from "./PolicyTemplate.module.scss";
 
 export const PolicyTemplate: FC = () => {
-  const router = useRouter();
+  const router: NextRouter = useRouter();
 
   return (
     <>

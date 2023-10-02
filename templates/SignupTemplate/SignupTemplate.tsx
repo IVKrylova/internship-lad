@@ -1,15 +1,16 @@
 import { FC, FormEvent, useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useRouter, NextRouter } from "next/router";
 import Link from "next/link";
 
 import { H1, ButtonCta, Input, InputPassword, ErrorMessage } from "@components";
 import { useFormAndValidation } from "@hooks";
 import { signup, auth } from "@api";
+import { TError, TUser } from "@types";
 
 import style from "./SignupTemplate.module.scss";
 
 export const SignupTemplate: FC = () => {
-  const router = useRouter();
+  const router: NextRouter = useRouter();
   const { isValid, errors, values, handleChange, setIsValid } =
     useFormAndValidation();
 
@@ -22,7 +23,7 @@ export const SignupTemplate: FC = () => {
     setIsActiveButton(false);
     setMessage("");
 
-    const res = await signup(values.email, values.password);
+    const res: TUser | TError = await signup(values.email, values.password);
     if (res && "token" in res) {
       setIsActiveButton(true);
       // В коммерческом приложении после успешной регистрации
@@ -30,7 +31,7 @@ export const SignupTemplate: FC = () => {
       // но фейковое API предоставляет возможность зайти в приложение только
       // под одним паролем и логином. Я создала функцию auth, чтобы отправить
       // запрос авторизации с правильными данными
-      const token = await auth(values.email, values.password);
+      const token: string | TError = await auth(values.email, values.password);
       if (token && typeof token === "string") {
         localStorage.setItem("token", token);
         router.push("/account");

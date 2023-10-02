@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter, NextRouter } from "next/router";
 
 import { TArticle } from "@types";
 import { H1, ButtonCta } from "@components";
@@ -12,7 +12,7 @@ type TProps = {
 };
 
 export const ArticleTemplate: FC<TProps> = ({ article }) => {
-  const router = useRouter();
+  const router: NextRouter = useRouter();
 
   return (
     <>

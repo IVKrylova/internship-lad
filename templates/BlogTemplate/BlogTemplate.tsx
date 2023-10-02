@@ -7,6 +7,7 @@ import { getArticles } from "@api";
 import { NextThunkDispatch } from "@servises/store";
 import { Article } from "./components";
 import { MAX_COUNT_ARTICLES } from "./constants";
+import { TArticles } from "@types";
 
 import style from "./BlogTemplate.module.scss";
 
@@ -14,13 +15,13 @@ export const BlogTemplate: FC = () => {
   const [countArticles, setCountArticles] = useState<number>(10);
 
   const dispatch = useAppDispatch() as NextThunkDispatch;
-  const articles = useAppSelector((store) => store.articles.articles);
+  const articles: TArticles | null = useAppSelector((store) => store.articles.articles);
 
   const getMoreArticles = async () => {
     if (countArticles < MAX_COUNT_ARTICLES) {
       const arr = structuredClone(articles);
       const res = await getArticles(countArticles);
-      if (res && Array.isArray(res)) dispatch(fetchArticles(arr.concat(res)));
+      if (res && Array.isArray(res)) dispatch(fetchArticles(arr?.concat(res)));
       setCountArticles((prev) => prev + 10);
     }
   };

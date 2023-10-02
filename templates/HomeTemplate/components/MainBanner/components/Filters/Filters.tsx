@@ -4,13 +4,14 @@ import { Select } from "./components";
 import { useAppSelector, useAppDispatch } from "@servises/hooks";
 import { fetchMainGuidesList } from "@servises/slices/mainGuidesList";
 import { NextThunkDispatch } from "@servises/store";
+import { TGuides } from "@types";
 
 import style from "./Filters.module.scss";
 
 export const Filters: FC = () => {
   const dispatch = useAppDispatch() as NextThunkDispatch;
-  const guides = useAppSelector((store) => store.guides.guides);
-  const mainGuidesList = useAppSelector(
+  const guides: TGuides | null = useAppSelector((store) => store.guides.guides);
+  const mainGuidesList: TGuides | null = useAppSelector(
     (store) => store.mainGuidesList.mainGuidesList
   );
 
