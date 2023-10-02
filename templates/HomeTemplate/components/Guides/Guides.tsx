@@ -5,6 +5,7 @@ import { useAppSelector, useAppDispatch } from "@servises/hooks";
 import { Guid } from "./components";
 import { fetchMainGuidesList } from "@servises/slices/mainGuidesList";
 import { NextThunkDispatch } from "@servises/store";
+import { fetchGuides } from "@servises/slices/guides";
 
 import style from "./Guides.module.scss";
 
@@ -18,12 +19,9 @@ export const Guides: FC = () => {
   const [buttonText, setButtonText] = useState<string>("See All Guides");
 
   const handleButtonClick = () => {
-
-console.log(buttonText)
-
     buttonText === "See All Guides"
       ? dispatch(fetchMainGuidesList(guides))
-      : dispatch(fetchMainGuidesList(guides.slice(0, 4)));
+      : dispatch(fetchMainGuidesList(guides?.slice(0, 4)));
   };
 
   useEffect(() => {
@@ -35,6 +33,31 @@ console.log(buttonText)
       ? setButtonText("See All Guides")
       : setButtonText("Hide Guides");
   }, [mainGuidesList]);
+
+  useEffect(() => {
+    // Фейковое API не предоставляет возможности сохранять обновленные аватары
+    // на сервере, поэтому при обновлении аватара массив гидов сохраняется
+    // в localStorage. При выходе из аккаунта localStorage очищается.
+    // При первой загрузке страницы проверяется, есть ли данные в localStorage,
+    // и если есть, массив гидов сохраняется в store из localStorage.
+    // Это нужно, чтобы корректо отображать данные при переходе из аккаунта
+    // на главную страницу
+    const data = localStorage.getItem("guides");
+    if (data !== null) {
+      const arr = JSON.parse(data);
+      if (
+        arr.length > 0 &&
+        "id" in arr[0] &&
+        "email" in arr[0] &&
+        "first_name" in arr[0] &&
+        "last_name" in arr[0] &&
+        "avatar" in arr[0] &&
+        "liked" in arr[0]
+      ) {
+        dispatch(fetchGuides(arr));
+      }
+    }
+  }, []);
 
   return (
     <section className={style.section} id="guides">
