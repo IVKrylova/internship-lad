@@ -19,6 +19,10 @@
       @include font_s36_w800;
     }
 
+    @include media_980 {
+      font-size: 30px;
+    }
+
     .accent {
       color: $colorCta;
     }
@@ -38,6 +42,11 @@
         @include font_s16_w600;
         padding: 20px;
       }
+
+      @include media_980 {
+        padding: 15px;
+        @include font_s14_w500;
+      }
     }
 
     .guides {
@@ -55,6 +64,11 @@
           .avatar {
             border-radius: 50%;
             border: 1px solid $colorWhite;
+
+            @include media_980 {
+              width: 40px;
+              height: 40px;
+            }
           }
 
           &:first-child {
@@ -67,18 +81,30 @@
             top: 0;
             left: 26px;
             z-index: 11;
+
+            @include media_980 {
+              left: 20px;
+            }
           }
 
           &:nth-child(3) {
             top: 0;
             left: 52px;
             z-index: 111;
+
+            @include media_980 {
+              left: 40px;
+            }
           }
 
           &:nth-child(4) {
             top: 0;
             left: 78px;
             z-index: 1111;
+
+            @include media_980 {
+              left: 60px;
+            }
           }
         }
       }
@@ -90,6 +116,10 @@
       @include font_s16_w600;
       line-height: 1.375;
       @include max-width-mixin(106px);
+
+      @include media_980 {
+        max-width: 120px;
+      }
 
       &Accent {
         color: $colorCta;

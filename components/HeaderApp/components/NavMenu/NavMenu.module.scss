@@ -10,6 +10,10 @@
     gap: 30px;
   }
 
+  @include media_980 {
+    gap: 20px;
+  }
+
   .link {
     color: $colorText;
     @include font_s16_w700;

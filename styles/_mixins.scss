@@ -52,6 +52,11 @@
 }
 
 // fonts
+@mixin font_s14_w500 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
 @mixin font_s16_w700 {
   font-size: 16px;
   font-weight: 700;
@@ -147,6 +152,12 @@
 
 @mixin media_1180 {
   @media screen and (max-width: 1180px) {
+    @content;
+  }
+}
+
+@mixin media_980 {
+  @media screen and (max-width: 980px) {
     @content;
   }
 }

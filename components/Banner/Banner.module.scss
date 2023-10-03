@@ -13,6 +13,10 @@
     @include media_1180 {
       width: $media_1180;
     }
+
+    @include media_980 {
+      width: $media_980;
+    }
   }
 
   .action {
@@ -35,9 +39,13 @@
     }
 
     @include media_1180 {
-      width: 768px;
+      width: $media_980;
       padding: 24px;
       gap: 20px;
+    }
+
+    @include media_980 {
+      margin: -64px 0 0;
     }
   }
 }

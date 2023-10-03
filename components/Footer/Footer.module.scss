@@ -31,9 +31,18 @@
       );
       justify-items: center;
 
+      @include media_980 {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: flex-start;
+      }
+
       .about {
         @include flex-column;
         gap: 30px;
+
+        @include media_980 {
+          grid-column: 1 / 4;
+        }
 
         .text {
           color: $colorLigthText;

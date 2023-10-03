@@ -18,6 +18,11 @@
     max-width: $media_1180;
   }
 
+  @include media_980 {
+    max-width: $media_980;
+    gap: 30px;
+  }
+
   .company {
     @include grow-shrink;
     display: flex;
@@ -77,6 +82,12 @@
     @include media_1180 {
       padding: 15px 20px;
       font-weight: 500;
+    }
+
+    @include media_980 {
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
     }
   }
 

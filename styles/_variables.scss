@@ -1,3 +1,4 @@
+// colors
 $colorLigthGrey: rgba(11, 6, 20, 0.3);
 $colorText: #0b0614;
 $colorCta: #ff5029;
@@ -10,6 +11,7 @@ $colorType: #fef4f5;
 $colorOverlay: rgba(0, 0, 0, 0.3);
 $colorError: #ff2400;
 
+// shadows
 $boxShadow: 0px 30px 60px 0px rgba(198, 191, 191, 0.18);
 $cardShadow: 0px 30px 60px 0px rgba(198, 191, 191, 0.15),
   0px -8px 20px 0px rgba(235, 235, 235, 0.15);
@@ -18,5 +20,7 @@ $shadowArticle: 0px 30px 60px 0px rgba(198, 191, 191, 0.15),
 $cardShadowHover: 0px 30px 60px 0px rgba(255, 80, 41, 0.15),
   0px -8px 20px 0px rgba(255, 80, 41, 0.15);
 
+// media queries
 $media_1440: 1024px;
 $media_1180: 900px;
+$media_980: 768px;

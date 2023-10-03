@@ -18,5 +18,9 @@
     @include media_1180 {
       max-width: $media_1180;
     }
+
+    @include media_980 {
+      max-width: $media_980;
+    }
   }
 }

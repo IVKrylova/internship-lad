@@ -20,6 +20,10 @@
       @include media_1180 {
         @include font_s16_w600;
       }
+
+      @include media_980 {
+        @include font_s14_w500;
+      }
     }
   }
 

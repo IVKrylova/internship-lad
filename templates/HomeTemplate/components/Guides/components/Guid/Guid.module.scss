@@ -19,11 +19,22 @@
       min-height: 408px;
     }
 
+    @include media_980 {
+      width: 200px;
+      padding: 20px;
+      min-height: 340px;
+    }
+
     .avatar {
       border-radius: 50%;
       border: 1px solid $colorCta;
       object-fit: cover;
       object-position: center;
+
+      @include media_980 {
+        width: 130px;
+        height: 130px;
+      }
     }
 
     .name {
@@ -33,6 +44,10 @@
       line-height: 1.33;
       padding: 30px 0 12px;
       transition: 0.2s ease-in-out;
+
+      @include media_980 {
+        @include font_s20_w600;
+      }
     }
 
     .rating {
@@ -42,6 +57,12 @@
       background-image: url(../../../../../../public/img/icon_stars_orang.svg);
       background-repeat: no-repeat;
       transition: 0.2s ease-in-out;
+
+      @include media_980 {
+        width: 100px;
+        height: 20px;
+        background-size: 100px 20px;
+      }
     }
 
     .review {
@@ -51,6 +72,10 @@
       text-align: center;
       line-height: 1.375;
       transition: 0.2s ease-in-out;
+
+      @include media_980 {
+        @include font_s14_w500;
+      }
     }
 
     &:hover {
