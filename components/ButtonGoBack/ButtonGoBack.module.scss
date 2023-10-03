@@ -1,7 +1,23 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
 .button {
   align-self: center;
   justify-self: start;
   width: max-content;
   height: max-content;
   margin-top: 20px;
+
+  @include media_1440 {
+    padding: 15px 20px;
+    font-weight: 400;
+    border-radius: 8px;
+  }
+
+  @include media_660 {
+    padding: 10px 15px;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: $buttonRadius_660;
+  }
 }

@@ -2,8 +2,12 @@
 @import "@styles/variables";
 
 .h1 {
-  padding: 50px 0 100px;
+  padding: 50px 0;
   text-align: center;
+
+  @include media_820 {
+    padding: 30px 0;
+  }
 }
 
 .mainList {
@@ -27,6 +31,10 @@
     .subtitle {
       @include font_s20_w700;
       line-height: 1.2;
+
+      @include media_820 {
+        font-size: 18px;
+      }
     }
 
     .subList {
@@ -35,6 +43,10 @@
       gap: 10px;
       counter-reset: subNum;
       list-style-type: none;
+
+      @include media_820 {
+        font-size: 16px;
+      }
 
       .item {
         &::before {

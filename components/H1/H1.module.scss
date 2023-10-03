@@ -4,4 +4,12 @@
 .h1 {
   color: $colorText;
   @include font_s40_w700;
+
+  @include media_1440 {
+    @include font_s36_w800;
+  }
+
+  @include media_820 {
+    font-size: 30px;
+  }
 }
