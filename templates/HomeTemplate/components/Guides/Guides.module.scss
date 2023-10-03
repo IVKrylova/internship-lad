@@ -12,6 +12,10 @@
     padding-top: $padding_820;
   }
 
+  @include media_660 {
+    padding-top: $padding_660;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;
@@ -20,6 +24,15 @@
 
     @include media_820 {
       padding-bottom: $padding_820;
+    }
+
+    @include media_660 {
+      padding-bottom: $padding_660;
+    }
+
+    @include media_440 {
+      flex-direction: column;
+      gap: 20px;
     }
 
     .button {
@@ -35,6 +48,10 @@
 
       @include media_820 {
         padding: 10px 20px;
+      }
+
+      @include media_660 {
+        border-radius: $buttonRadius_660;
       }
     }
   }
@@ -53,6 +70,14 @@
     @include media_820 {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    @include media_660 {
+      gap: 15px;
+    }
+
+    @include media_440 {
+      grid-template-columns: 1fr;
+    }
   }
 
   .message {
@@ -62,6 +87,10 @@
 
     @include media_820 {
       @include font_s16_w600;
+    }
+
+    @include media_660 {
+      @include font_s14_w500;
     }
   }
 }

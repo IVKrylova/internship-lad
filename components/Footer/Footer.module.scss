@@ -44,12 +44,20 @@
         justify-items: flex-start;
       }
 
+      @include media_660 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .about {
         @include flex-column;
         gap: 30px;
 
         @include media_980 {
           grid-column: 1 / 4;
+        }
+
+        @include media_660 {
+          grid-column: 1 / 3;
         }
 
         .text {
@@ -60,6 +68,11 @@
           @include media_1180 {
             font-weight: 400;
           }
+
+          @include media_660 {
+            line-height: 1.3;
+            font-size: 14px;
+          }
         }
       }
     }
@@ -68,6 +81,14 @@
       display: flex;
       gap: 40px;
       position: relative;
+
+      @include media_660 {
+        gap: 20px;
+      }
+
+      @include media_440 {
+        flex-wrap: wrap;
+      }
 
       &::before {
         position: absolute;
@@ -88,6 +109,14 @@
           font-weight: 400;
         }
 
+        @include media_660 {
+          font-size: 12px;
+        }
+
+        @include media_440 {
+          width: 100%;
+        }
+
         .accent {
           color: $colorCta;
         }
@@ -100,6 +129,10 @@
 
         @include media_1180 {
           font-weight: 400;
+        }
+
+        @include media_660 {
+          font-size: 12px;
         }
       }
     }

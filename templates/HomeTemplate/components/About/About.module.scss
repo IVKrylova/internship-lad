@@ -12,6 +12,10 @@
     padding: $padding_820 0;
   }
 
+  @include media_660 {
+    padding: $padding_660 0;
+  }
+
   .h2 {
     text-align: center;
   }
@@ -26,6 +30,11 @@
     @include media_820 {
       padding-top: $padding_820;
       gap: 20px;
+    }
+
+    @include media_660 {
+      padding-top: $padding_660;
+      flex-direction: column;
     }
   }
 }

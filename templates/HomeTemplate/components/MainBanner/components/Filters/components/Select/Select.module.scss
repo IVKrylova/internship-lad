@@ -5,6 +5,13 @@
   position: relative;
   @include max-width-mixin(212px);
 
+  @include media_660 {
+    max-width: 100%;
+    box-shadow: $cardShadow;
+    padding: 10px;
+    border-radius: 5px;
+  } 
+
   &:not(:last-child)::after {
     position: absolute;
     content: "";
@@ -14,6 +21,10 @@
     opacity: 0.2;
     right: 0;
     top: 0;
+
+    @include media_660 {
+      display: none;
+    }
   }
 
   .title {
@@ -39,10 +50,15 @@
 
     @include media_1180 {
       font-size: 16px;
+      margin-right: 20px;
     }
 
     @include media_820 {
       @include font_s14_w500;
+    }
+
+    @include media_820 {
+      margin-right: 10px;
     }
 
     .text {
@@ -82,11 +98,17 @@
     left: -10px;
     flex-direction: column;
     padding: 5px;
-    width: 100%;
+    width: max-content;
     background: #ffff;
     border-radius: 5px;
     z-index: 100;
     list-style-type: none;
+
+    @include media_660 {
+      top: 50px;
+      left: 0;
+      width: 100%;
+    }
 
     &Active {
       display: flex;

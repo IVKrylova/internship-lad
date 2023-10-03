@@ -59,5 +59,11 @@
       border-radius: 10px;
       padding: 15px;
     }
+
+    @include media_660 {
+      margin: 30px 0 0;
+      flex-direction: column;
+      box-shadow: none;
+    }
   }
 }

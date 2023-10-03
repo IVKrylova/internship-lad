@@ -7,6 +7,11 @@
   width: 100%;
   align-items: center;
 
+  @include media_660 {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .message {
     @include font_s40_w700;
     color: $colorText;
@@ -25,6 +30,14 @@
 
     @include media_820 {
       font-size: 26px;
+    }
+
+    @include media_660 {
+      text-align: center;
+    }
+
+    @include media_440 {
+      font-size: 20px;
     }
 
     .accent {
@@ -54,6 +67,10 @@
       @include media_980 {
         padding: 15px;
         @include font_s14_w500;
+      }
+
+      @include media_660 {
+        border-radius: $buttonRadius_660;
       }
     }
 

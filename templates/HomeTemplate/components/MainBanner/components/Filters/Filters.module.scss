@@ -10,5 +10,13 @@
   @include media_1180 {
     gap: 20px;
   }
+
+  @include media_820 {
+    gap: 10px;
+  }
+
+  @include media_660 {
+    grid-template-columns: 1fr;
+  }
 }
 

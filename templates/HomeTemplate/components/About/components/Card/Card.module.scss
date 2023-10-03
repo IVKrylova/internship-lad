@@ -27,6 +27,17 @@
     width: calc((100% - 40px - 40px) / 3);
   }
 
+  @include media_660 {
+    width: 100%;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: center;
+  }
+
+  @include media_660 {
+    gap: 30px;
+  }
+
   .img {
     @include media_1180 {
       width: 134px;
@@ -36,6 +47,11 @@
     @include media_980 {
       width: 100px;
       height: 184px;
+    }
+
+    @include media_660 {
+      width: 70px;
+      height: 128px;
     }
   }
 
@@ -53,6 +69,14 @@
     @include media_980 {
       font-size: 24px;
       max-width: 150px;
+    }
+
+    @include media_660 {
+      max-width: 100%;
+    }
+
+    @include media_660 {
+      font-size: 20px;
     }
   }
 }

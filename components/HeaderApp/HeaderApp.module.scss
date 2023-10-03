@@ -27,6 +27,10 @@
     padding: 30px 20px;
   }
 
+  @include media_660 {
+    gap: 20px;
+  }
+
   .company {
     @include grow-shrink;
     display: flex;
@@ -45,6 +49,10 @@
 
       @include media_1180 {
         gap: 10px;
+      }
+
+      @include media_440 {
+        display: none;
       }
 
       &::before {
@@ -92,6 +100,16 @@
       padding: 10px;
       font-size: 14px;
       border-radius: 6px;
+    }
+
+    @include media_820 {
+      font-size: 12px;
+      padding: 7px 10px;
+      border-radius: $buttonRadius_660;
+    }
+
+    @include media_660 {
+      padding: 5px 10px;
     }
   }
 

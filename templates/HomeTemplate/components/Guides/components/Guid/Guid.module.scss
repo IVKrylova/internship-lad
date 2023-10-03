@@ -29,6 +29,14 @@
       width: 250px;
     }
 
+    @include media_660 {
+      width: 185px;
+    }
+
+    @include media_440 {
+      width: 250px;
+    }
+
     .avatar {
       border-radius: 50%;
       border: 1px solid $colorCta;

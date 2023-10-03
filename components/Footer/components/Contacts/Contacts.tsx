@@ -14,7 +14,13 @@ export const Contacts: FC = () => {
         {ADDRESS.map((el, ind) => {
           return (
             <li key={ind} className={style.itemAddress}>
-              <Image alt={el.alt} src={el.icon} width={24} height={24} />
+              <Image
+                alt={el.alt}
+                src={el.icon}
+                width={24}
+                height={24}
+                className={style.iconAddress}
+              />
               <span className={style.text}>{el.text}</span>
             </li>
           );
@@ -25,7 +31,13 @@ export const Contacts: FC = () => {
           return (
             <li key={ind}>
               <Link href={el.link} className={style.link}>
-                <Image alt={el.alt} src={el.icon} width={40} height={40} />
+                <Image
+                  alt={el.alt}
+                  src={el.icon}
+                  width={40}
+                  height={40}
+                  className={style.iconNetwork}
+                />
               </Link>
             </li>
           );
