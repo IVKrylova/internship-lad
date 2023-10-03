@@ -9,18 +9,59 @@
   gap: 30px;
   align-items: center;
 
+  @include media_660 {
+    flex-direction: column;
+  }
+
+  @include media_440 {
+    gap: 15px;
+  }
+
+  .img {
+    border-radius: 10px;
+
+    @include media_440 {
+      width: 100%;
+    }
+  }
+
   .description {
     @include flex-column;
     gap: 30px;
 
+    @include media_440 {
+      gap: 15px;
+    }
+
     .title {
-      @include font_s36_w800;
+      @include font_s24_w800;
+
+      @include media_820 {
+        @include font_s20_w600;
+      }
+
+      @include media_660 {
+        text-align: center;
+      }
+
+      @include media_440 {
+        font-size: 18px;
+      }
     }
 
     .summary {
       color: $colorText;
-      @include font_s24_w700;
+      @include font_s20_w600;
       line-height: 1.3;
+
+      @include media_820 {
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      @include media_440 {
+        font-size: 14px;
+      }
     }
   }
 }

@@ -14,7 +14,13 @@ type TProps = {
 export const Article: FC<TProps> = ({ el }) => {
   return (
     <li className={style.card}>
-      <Image alt={`image ${el.title}`} src={el.url} width={300} height={200} />
+      <Image
+        alt={`image ${el.title}`}
+        src={el.url}
+        width={300}
+        height={200}
+        className={style.img}
+      />
       <div className={style.description}>
         <Link href={`/blog/${el.id}`}>
           <H2 title={el.title} className={style.title} />
