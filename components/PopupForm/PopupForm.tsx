@@ -80,6 +80,7 @@ export const PopupForm: FC<TProps> = ({
               text={buttonText}
               handleClick={() => {}}
               disabled={!isValid}
+              className={style.buttonCta}
             />
           </form>
         )}

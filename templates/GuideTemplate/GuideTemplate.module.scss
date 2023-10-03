@@ -18,11 +18,35 @@
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
+    cursor: pointer;
+
+    @include media_980 {
+      width: 250px;
+      height: 250px;
+    }
+
+    @include media_980 {
+      width: 200px;
+      height: 200px;
+    }
+
+    @include media_440 {
+      width: 150px;
+      height: 150px;
+    }
   }
 
   .contact {
     @include font_s24_w700;
     color: $colorText;
+
+    @include media_980 {
+      font-size: 20px;
+    }
+
+    @include media_440 {
+      font-size: 16px;
+    }
   }
 
   .accent {
@@ -35,4 +59,16 @@
   @include font_s24_w500;
   line-height: 1.3;
   padding: 50px 0 100px;
+
+  @include media_980 {
+    font-size: 20px;
+  }
+
+  @include media_660 {
+    font-size: 18px;
+  }
+
+  @include media_440 {
+    font-size: 16px;
+  }
 }
