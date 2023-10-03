@@ -8,6 +8,10 @@
     padding: 120px 0;
   }
 
+  @include media_820 {
+    padding: $padding_820 0;
+  }
+
   .h2 {
     text-align: center;
   }
@@ -18,5 +22,10 @@
     padding-top: 100px;
     gap: 30px;
     list-style-type: none;
+
+    @include media_820 {
+      padding-top: $padding_820;
+      grid-template-columns: 1fr;
+    }
   }
 }

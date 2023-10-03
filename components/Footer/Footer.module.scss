@@ -26,6 +26,10 @@
       max-width: $media_980;
     }
 
+    @include media_820 {
+      padding: 40px 20px;
+    }
+
     .content {
       width: 100%;
       display: grid;

@@ -8,6 +8,10 @@
     padding: 120px 0;
   }
 
+  @include media_820 {
+    padding: $padding_820 0;
+  }
+
   .h2 {
     text-align: center;
   }
@@ -18,5 +22,10 @@
     gap: 30px;
     justify-content: space-between;
     padding-top: 100px;
+
+    @include media_820 {
+      padding-top: $padding_820;
+      gap: 20px;
+    }
   }
 }

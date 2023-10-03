@@ -23,6 +23,10 @@
       font-size: 30px;
     }
 
+    @include media_820 {
+      font-size: 26px;
+    }
+
     .accent {
       color: $colorCta;
     }
@@ -32,6 +36,10 @@
     @include max-width-mixin(242px);
     @include flex-column;
     gap: 20px;
+
+    @include media_820 {
+      max-width: 220px;
+    }
 
     .buttonGuide {
       padding: 20px 40px;
@@ -121,9 +129,18 @@
         max-width: 120px;
       }
 
+      @include media_820 {
+        @include font_s14_w500;
+        max-width: 106px;
+      }
+
       &Accent {
         color: $colorCta;
         font-weight: 800;
+
+        @include media_820 {
+          font-weight: 600;;
+        }
       }
     }
   }

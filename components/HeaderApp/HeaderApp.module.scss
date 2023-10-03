@@ -23,6 +23,10 @@
     gap: 30px;
   }
 
+  @include media_820 {
+    padding: 30px 20px;
+  }
+
   .company {
     @include grow-shrink;
     display: flex;

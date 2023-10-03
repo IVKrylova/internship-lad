@@ -8,11 +8,19 @@
     padding-top: 120px;
   }
 
+  @include media_820 {
+    padding-top: $padding_820;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 100px;
+
+    @include media_820 {
+      padding-bottom: $padding_820;
+    }
 
     .button {
       @include font_s18_w700;
@@ -23,6 +31,10 @@
 
       @include media_980 {
         @include font_s14_w500;
+      }
+
+      @include media_820 {
+        padding: 10px 20px;
       }
     }
   }
@@ -37,11 +49,19 @@
     @include media_1440 {
       grid-template-columns: repeat(3, 1fr);
     }
+
+    @include media_820 {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .message {
     color: $colorText;
     @include font_s24_w800;
     text-align: center;
+
+    @include media_820 {
+      @include font_s16_w600;
+    }
   }
 }

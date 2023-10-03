@@ -21,7 +21,7 @@
     left: 0;
     width: 100%;
     background-color: $colorWhite;
-    padding: 20px;
+    padding: 20px 40px;
 
     &Active {
       @include popup_end_animation;
