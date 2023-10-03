@@ -4,6 +4,10 @@
 .section {
   padding-top: 190px;
 
+  @include media_1180 {
+    padding-top: 120px;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;
@@ -12,6 +16,10 @@
 
     .button {
       @include font_s18_w700;
+
+      @include media_1180 {
+        @include font_s16_w600;
+      }
     }
   }
 

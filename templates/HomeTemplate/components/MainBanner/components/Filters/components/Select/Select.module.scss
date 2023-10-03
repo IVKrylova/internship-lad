@@ -33,6 +33,10 @@
     line-height: 1.5;
     @include font_s20_w600;
 
+    @include media_1180 {
+      font-size: 16px;
+    }
+
     .text {
       text-overflow: ellipsis;
       white-space: nowrap;

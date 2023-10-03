@@ -11,6 +11,13 @@
     @include flex-column;
     transition: 0.2s ease-in-out;
     min-height: 428px;
+    align-items: center;
+
+    @include media_1180 {
+      padding: 30px;
+      width: 268px;
+      min-height: 408px;
+    }
 
     .avatar {
       border-radius: 50%;

@@ -7,6 +7,11 @@
   .background {
     @include media_1440 {
       height: auto;
+      width: $media_1440;
+    }
+
+    @include media_1180 {
+      width: $media_1180;
     }
   }
 
@@ -26,7 +31,13 @@
 
     @include media_1440 {
       margin: -64px 62px 0;
-      width: 900px;
+      width: $media_1180;
+    }
+
+    @include media_1180 {
+      width: 768px;
+      padding: 24px;
+      gap: 20px;
     }
   }
 }

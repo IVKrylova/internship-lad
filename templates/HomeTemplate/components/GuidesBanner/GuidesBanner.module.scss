@@ -10,10 +10,14 @@
   .message {
     @include font_s40_w700;
     color: $colorText;
-    @include max-width-mixin(572px);
+    @include max-width-mixin(582px);
     line-height: 1.35;
     display: inline-flex;
     flex-direction: column;
+
+    @include media_1180 {
+      @include font_s36_w800;
+    }
 
     .accent {
       color: $colorCta;
@@ -21,14 +25,19 @@
   }
 
   .action {
-    @include max-width-mixin(252px);
+    @include max-width-mixin(242px);
     @include flex-column;
-    gap: 30px;
+    gap: 20px;
 
     .buttonGuide {
       padding: 20px 40px;
       @include font_s18_w700;
       white-space: nowrap;
+
+      @include media_1180 {
+        @include font_s16_w600;
+        padding: 20px;
+      }
     }
 
     .guides {

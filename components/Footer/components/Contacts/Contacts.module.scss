@@ -8,6 +8,10 @@
   .title {
     @include font_s20_w800;
     color: $colorWhite;
+
+    @include media_1180 {
+      @include font_s18_w700;
+    }
   }
 
   .list {
@@ -24,6 +28,10 @@
           color: $colorWhite;
           @include font_s16_w700;
           line-height: 1.75;
+
+          @include media_1180 {
+            font-weight: 400;
+          }
         }
       }
     }

@@ -8,6 +8,10 @@
   .title {
     @include font_s20_w800;
     color: $colorWhite;
+
+    @include media_1180 {
+      @include font_s18_w700;
+    }
   }
 
   .list {
@@ -20,6 +24,10 @@
       @include font_s16_w600;
       line-height: 1.75;
       @include el_hover;
+
+      @include media_1180 {
+        font-weight: 400;
+      }
     }
   }
 }

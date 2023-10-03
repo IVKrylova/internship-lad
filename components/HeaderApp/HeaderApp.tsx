@@ -23,6 +23,7 @@ export const HeaderApp: FC<TProps> = ({ isLogin, setIsLogin }) => {
             alt="icon search"
             width={24}
             height={24}
+            className={style.iconSearch}
           />
           <span className={style.searchText}>Search</span>
         </Link>
@@ -41,6 +42,7 @@ export const HeaderApp: FC<TProps> = ({ isLogin, setIsLogin }) => {
               alt="icon account"
               width={30}
               height={30}
+              className={style.iconAccount}
             />
           </Link>
           <ButtonExit setIsLogin={setIsLogin} />

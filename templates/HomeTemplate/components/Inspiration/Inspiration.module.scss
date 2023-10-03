@@ -4,6 +4,10 @@
 .section {
   padding: 190px 0;
 
+  @include media_1180 {
+    padding: 120px 0;
+  }
+
   .h2 {
     text-align: center;
   }
@@ -13,5 +17,6 @@
     grid-template-columns: repeat(2, 1fr);
     padding-top: 100px;
     gap: 30px;
+    list-style-type: none;
   }
 }

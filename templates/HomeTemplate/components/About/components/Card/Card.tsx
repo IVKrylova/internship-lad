@@ -16,7 +16,13 @@ export const Card: FC<TProps> = ({ item }) => {
         <source media="(resolution: 2x)" srcSet={item.src2x} />
         <source media="(resolution: 3x)" srcSet={item.src3x} />
         <source media="(resolution > 3x)" srcSet={item.src4x} />
-        <Image alt={item.alt} src={item.src} width={174} height={312} />
+        <Image
+          alt={item.alt}
+          src={item.src}
+          width={174}
+          height={312}
+          className={style.img}
+        />
       </picture>
       <p className={style.step}>{item.text}</p>
     </li>

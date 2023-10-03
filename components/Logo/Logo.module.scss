@@ -1,0 +1,8 @@
+@import "@styles/_mixins";
+
+.img {
+  @include media_1180 {
+    width: 100px;
+    height: auto;
+  }
+}

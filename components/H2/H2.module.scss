@@ -5,4 +5,8 @@
   color: $colorText;
   @include font_s64_w800;
   line-height: 1.09;
+
+  @include media_1180 {
+    font-size: 48px;
+  }
 }

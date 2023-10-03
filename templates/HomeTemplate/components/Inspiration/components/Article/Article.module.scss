@@ -7,7 +7,7 @@
   box-shadow: $shadowArticle;
   padding: 35px 30px;
 
-  img {
+  .img {
     object-fit: cover;
     object-position: center;
   }
@@ -23,11 +23,19 @@
         width: 350px;
         height: auto;
       }
+
+      @include media_1180 {
+        width: 250px;
+      }
     }
 
     .description {
       .type {
         margin: 30px 0 25px;
+
+        @include media_1180 {
+          margin: 20px 0;
+        }
       }
     }
   }
@@ -42,6 +50,10 @@
       border-radius: 20px;
       width: 181px;
       height: 243px;
+
+      @include media_1180 {
+        height: auto;
+      }
     }
 
     .description {
@@ -59,6 +71,11 @@
       color: $colorCta;
       @include font_s24_w700;
       width: max-content;
+
+      @include media_1180 {
+        @include font_s20_w600;
+        padding-right: 20px;
+      }
     }
 
     .title {
@@ -67,8 +84,19 @@
       color: $colorText;
       @include max-width-mixin(355px);
 
+      @include media_1180 {
+        @include font_s24_w700;
+      }
+
       .link {
         @include el_hover;
+
+        .icon {
+          @include media_1180 {
+            width: 24px;
+            height: 24px;
+          }
+        }
       }
     }
   }

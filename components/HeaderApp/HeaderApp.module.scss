@@ -11,6 +11,11 @@
 
   @include media_1440 {
     padding: 30px 0;
+    max-width: $media_1440;
+  }
+
+  @include media_1180 {
+    max-width: $media_1180;
   }
 
   .company {
@@ -19,11 +24,19 @@
     gap: 24px;
     align-items: center;
 
+    @include media_1180 {
+      gap: 18px;
+    }
+
     .search {
       display: flex;
       align-items: center;
       gap: 12px;
       @include el_hover;
+
+      @include media_1180 {
+        gap: 10px;
+      }
 
       &::before {
         content: "";
@@ -32,6 +45,18 @@
         background-color: $colorLigthGrey;
         margin-right: 12px;
         display: inline-block;
+
+        @include media_1180 {
+          height: 26px;
+          margin-right: 6px;
+        }
+      }
+
+      .iconSearch {
+        @include media_1180 {
+          width: 20px;
+          height: 20px;
+        }
       }
 
       &Text {
@@ -48,5 +73,19 @@
     padding: 20px 30px;
     @include font_s16_w700;
     @include el_hover;
+
+    @include media_1180 {
+      padding: 15px 20px;
+      font-weight: 500;
+    }
+  }
+
+  .iconAccount {
+    @include el_hover;
+    
+    @include media_1180 {
+      width: 22px;
+      height: 22px;
+    }
   }
 }

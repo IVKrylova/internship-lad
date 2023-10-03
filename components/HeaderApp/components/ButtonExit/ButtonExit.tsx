@@ -34,6 +34,7 @@ export const ButtonExit: FC<TProps> = ({ setIsLogin }) => {
         src="/img/icon_exit.svg"
         width={24}
         height={24}
+        className={style.icon}
       />
     </button>
   );

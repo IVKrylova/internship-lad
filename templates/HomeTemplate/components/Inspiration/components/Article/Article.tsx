@@ -30,6 +30,7 @@ export const Article: FC<TProps> = ({ el }) => {
               src="img/icon_arrow_up_right.svg"
               width={42}
               height={42}
+              className={style.icon}
             />
           </Link>
         </p>

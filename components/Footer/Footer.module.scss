@@ -15,6 +15,11 @@
 
     @include media_1440 {
       padding: 90px 0 40px;
+      max-width: $media_1440;
+    }
+
+    @include media_1180 {
+      max-width: $media_1180;
     }
 
     .content {
@@ -34,6 +39,10 @@
           color: $colorLigthText;
           @include font_s16_w600;
           line-height: 1.75;
+
+          @include media_1180 {
+            font-weight: 400;
+          }
         }
       }
     }
@@ -58,6 +67,10 @@
         color: $colorLigthText;
         @include font_s16_w600;
 
+        @include media_1180 {
+          font-weight: 400;
+        }
+
         .accent {
           color: $colorCta;
         }
@@ -67,6 +80,10 @@
         @include el_hover;
         color: $colorLigthText;
         @include font_s16_w600;
+
+        @include media_1180 {
+          font-weight: 400;
+        }
       }
     }
   }

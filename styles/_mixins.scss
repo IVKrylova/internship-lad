@@ -141,7 +141,12 @@
 // media queries
 @mixin media_1440 {
   @media screen and (max-width: 1440px) {
-    max-width: 1024px;
+    @content;
+  }
+}
+
+@mixin media_1180 {
+  @media screen and (max-width: 1180px) {
     @content;
   }
 }

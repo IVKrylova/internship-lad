@@ -31,7 +31,7 @@ export const MainBanner: FC = () => {
         type="button"
         text="Reset Filters"
         handleClick={handleButtonClick}
-        className={style.buttonGuide}
+        className={style.buttonSearch}
       />
       <H1 title="Find the Best Egyptian Guide" className={style.h1} />
     </Banner>

@@ -1,8 +1,14 @@
+@import "@styles/_mixins";
+
 .filters {
   display: grid;
   list-style-type: none;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
   gap: 24px;
+
+  @include media_1180 {
+    gap: 20px;
+  }
 }
 

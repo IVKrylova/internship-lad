@@ -4,4 +4,11 @@
 .buttonExit {
   @include reset-button;
   @include el_hover;
+
+  .icon {
+    @include media_1180 {
+      width: 20px;
+      height: 20px;
+    }
+  }
 }

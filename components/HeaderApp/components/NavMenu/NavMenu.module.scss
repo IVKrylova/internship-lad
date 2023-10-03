@@ -6,6 +6,10 @@
   gap: 40px;
   list-style-type: none;
 
+  @include media_1180 {
+    gap: 30px;
+  }
+
   .link {
     color: $colorText;
     @include font_s16_w700;
