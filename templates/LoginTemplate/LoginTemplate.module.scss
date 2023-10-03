@@ -4,6 +4,10 @@
 .h1 {
   text-align: center;
   padding: 50px 0;
+
+  @include media_820 {
+    padding: 30px 0;
+  }
 }
 
 .textLink {
@@ -12,20 +16,35 @@
   text-align: center;
   color: $colorText;
 
+  @include media_820 {
+    font-size: 20px;
+  }
+
+  @include media_440 {
+    font-size: 18px;
+  }
+
   .link {
     @include el_hover;
-    border-bottom: 1px solid $colorCta;
+    color: $colorCta;
   }
 }
 
 .form {
-  @include max-width-mixin(700px);
+  @include max-width-mixin(500px);
   margin: 0 auto 100px;
   @include flex-column;
   gap: 15px;
 
   .buttonSubmit {
-    width: 200px;
+    width: 150px;
     align-self: center;
+    padding: 20px;
+
+    @include media_660 {
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 400;
+    }
   }
 }
