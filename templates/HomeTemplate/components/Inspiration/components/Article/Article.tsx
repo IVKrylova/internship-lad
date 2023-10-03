@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { TArticle } from "@types";
+import { ImageWithHideOnError } from "@components";
 
 import style from "./Article.module.scss";
 
@@ -13,7 +14,7 @@ type TProps = {
 export const Article: FC<TProps> = ({ el }) => {
   return (
     <li className={style.article}>
-      <Image
+      <ImageWithHideOnError
         alt={el.title}
         src={el.url}
         className={style.img}

@@ -1,8 +1,8 @@
 import { FC } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { TGuide } from "@types";
+import { ImageWithHideOnError } from "@components";
 
 import style from "./Guid.module.scss";
 
@@ -14,7 +14,7 @@ export const Guid: FC<TProps> = ({ guid }) => {
   return (
     <li className={style.guid}>
       <Link href={`/account/${guid.id}`} className={style.card}>
-        <Image
+        <ImageWithHideOnError
           alt={`photo ${guid.first_name} ${guid.last_name}`}
           src={guid.avatar}
           width={188}

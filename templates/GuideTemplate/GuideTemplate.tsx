@@ -1,8 +1,14 @@
 import { FC, useState, useEffect, FormEvent } from "react";
-import Image from "next/image";
 
 import { TGuide, TGuides } from "@types";
-import { H1, ButtonGoBack, ButtonLike, PopupForm, Input } from "@components";
+import {
+  H1,
+  ButtonGoBack,
+  ButtonLike,
+  PopupForm,
+  Input,
+  ImageWithHideOnError,
+} from "@components";
 import { useAppSelector, useAppDispatch } from "@servises/hooks";
 import { useFormAndValidation } from "@hooks";
 import { updateGuideAvatar } from "@servises/slices/guides";
@@ -89,7 +95,7 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
       />
       <div className={style.about}>
         <ButtonLike id={guide.id} liked={liked} />
-        <Image
+        <ImageWithHideOnError
           alt={`photo ${guide.first_name} ${guide.last_name}`}
           src={avatar ? avatar : guide.avatar}
           width={300}

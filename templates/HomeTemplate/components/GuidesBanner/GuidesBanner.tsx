@@ -1,7 +1,14 @@
 import { FC, useState, FormEvent } from "react";
-import Image from "next/image";
 
-import { ButtonCta, Banner, H2, PopupForm, Input, Checkbox } from "@components";
+import {
+  ButtonCta,
+  Banner,
+  H2,
+  PopupForm,
+  Input,
+  Checkbox,
+  ImageWithHideOnError,
+} from "@components";
 import { useAppSelector } from "@servises/hooks";
 import { useFormAndValidation } from "@hooks";
 import { TGuides } from "@types";
@@ -70,7 +77,7 @@ export const GuidesBanner: FC = () => {
               {guides?.slice(0, 4).map((el) => {
                 return (
                   <div key={el.id} className={style.guide}>
-                    <Image
+                    <ImageWithHideOnError
                       className={style.avatar}
                       alt={`avatar ${el.first_name} ${el.last_name}`}
                       src={el.avatar}

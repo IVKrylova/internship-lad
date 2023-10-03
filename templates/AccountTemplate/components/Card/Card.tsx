@@ -1,9 +1,8 @@
 import { FC } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { TGuide } from "@types";
-import { ButtonLike } from "@components";
+import { ButtonLike, ImageWithHideOnError } from "@components";
 
 import style from "./Card.module.scss";
 
@@ -18,7 +17,7 @@ export const Card: FC<TProps> = ({ el }) => {
         id={el.id}
         liked={el.liked !== undefined ? el.liked : false}
       />
-      <Image
+      <ImageWithHideOnError
         className={style.avatar}
         alt={`photo ${el.first_name} ${el.last_name}`}
         src={el.avatar}

@@ -1,8 +1,7 @@
 import { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
-import { H2 } from "@components";
+import { H2, ImageWithHideOnError } from "@components";
 import { TArticle } from "@types";
 
 import style from "./Article.module.scss";
@@ -14,7 +13,7 @@ type TProps = {
 export const Article: FC<TProps> = ({ el }) => {
   return (
     <li className={style.card}>
-      <Image
+      <ImageWithHideOnError
         alt={`image ${el.title}`}
         src={el.url}
         width={300}

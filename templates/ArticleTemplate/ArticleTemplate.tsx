@@ -1,8 +1,7 @@
 import { FC } from "react";
-import Image from "next/image";
 
 import { TArticle } from "@types";
-import { H1, ButtonGoBack } from "@components";
+import { H1, ButtonGoBack, ImageWithHideOnError } from "@components";
 
 import style from "./ArticleTemplate.module.scss";
 
@@ -15,7 +14,7 @@ export const ArticleTemplate: FC<TProps> = ({ article }) => {
     <>
       <ButtonGoBack />
       <div className={style.title}>
-        <Image
+        <ImageWithHideOnError
           width={400}
           height={300}
           alt={`image ${article.title}`}

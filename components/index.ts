@@ -13,4 +13,4 @@ export { InputPassword } from "./InputPassword";
 export { ErrorMessage } from "./ErrorMessage";
 export { ButtonLike } from "./ButtonLike";
 export { ButtonGoBack } from "./ButtonGoBack";
-
+export { ImageWithHideOnError } from "./ImageWithHideOnError";
