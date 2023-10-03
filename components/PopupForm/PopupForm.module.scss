@@ -28,17 +28,52 @@
     @include flex-column;
     gap: 30px;
 
+    @include media_820 {
+      width: 500px;
+      gap: 20px;
+    }
+
+    @include media_660 {
+      width: 400px;
+    }
+
+    @include media_440 {
+      width: 300px;
+      padding: 15px;
+      border-radius: $buttonRadius_660;
+    }
+
     .buttonClose {
       @include reset-button;
       @include el_hover;
       position: absolute;
       top: 30px;
       right: 30px;
+
+      @include media_440 {
+        top: 15px;
+        right: 10px;
+      }
+
+      .iconClose {
+        @include media_440 {
+          width: 18px;
+          height: 18px;
+        }
+      }
     }
 
     .title {
       @include font_s36_w800;
       text-align: center;
+
+      @include media_1180 {
+        @include font_s24_w700;
+      }
+
+      @include media_440 {
+        font-size: 18px;
+      }
     }
 
     .error {

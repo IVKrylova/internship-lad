@@ -8,6 +8,14 @@
   .label {
     @include font_s20_w600;
     color: $colorText;
+
+    @include media_1180 {
+      @include font_s16_w600;
+    }
+
+    @include media_820 {
+      gap: 5px;
+    }
   }
 
   .input {
@@ -23,5 +31,9 @@
 
   .error {
     @include input_err;
+
+    @include media_440 {
+      font-size: 12px;
+    }
   }
 }

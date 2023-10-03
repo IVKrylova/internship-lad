@@ -67,6 +67,7 @@ export const PopupForm: FC<TProps> = ({
             alt="button close"
             width={24}
             height={24}
+            className={style.iconClose}
           />
         </button>
         <h3 className={style.title}>{title}</h3>

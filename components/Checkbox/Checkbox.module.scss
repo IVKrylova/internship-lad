@@ -8,11 +8,24 @@
     margin-right: 10px;
     width: 20px;
     height: 20px;
+
+    @include media_1180 {
+      width: 16px;
+      height: 16px;
+    }
   }
 
   .text {
     @include font_s20_w400;
     color: $colorText;
+
+    @include media_1180 {
+      font-size: 16px;
+    }
+
+    @include media_440 {
+      font-size: 14px;
+    }
   }
 
   .error {
