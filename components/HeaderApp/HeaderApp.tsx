@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { Logo } from "@components";
-import { ButtonExit, NavMenu } from "./components";
+import { ButtonExit, NavMenu, MobileMenu } from "./components";
 
 import style from "./HeaderApp.module.scss";
 
@@ -48,6 +48,7 @@ export const HeaderApp: FC<TProps> = ({ isLogin, setIsLogin }) => {
           <ButtonExit setIsLogin={setIsLogin} />
         </>
       )}
+      <MobileMenu />
     </header>
   );
 };

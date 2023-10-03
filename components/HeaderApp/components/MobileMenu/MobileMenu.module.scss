@@ -1,0 +1,42 @@
+@import "@styles/_mixins";
+@import "@styles/variables";
+
+.block {
+  display: none;
+
+  @include media_820 {
+    display: block;
+  }
+
+  .button {
+    @include reset-button;
+    @include el_hover;
+  }
+
+  .menu {
+    @include popup_init_animation;
+    position: absolute;
+    z-index: 10000;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background-color: $colorWhite;
+    padding: 20px;
+
+    &Active {
+      @include popup_end_animation;
+    }
+
+    .list {
+      @include flex-column;
+      gap: 15px;
+      list-style-type: none;
+
+      .link {
+        @include el_hover;
+        color: $colorText;
+        @include font_s16_w600;
+      }
+    }
+  }
+}
