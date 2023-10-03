@@ -4,12 +4,20 @@
 .card {
   border-radius: 15px;
   box-shadow: $cardShadow;
-  padding: 50px;
+  padding: 30px;
   @include flex-column;
   gap: 50px;
   transition: 0.2s ease-in-out;
   align-items: center;
   position: relative;
+
+  @include media_820 {
+    padding: 20px;
+  }
+
+  @include media_440 {
+    width: 250px;
+  }
 
   &:hover {
     box-shadow: $cardShadowHover;
@@ -19,6 +27,19 @@
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
+    align-self: center;
+    padding: 20px;
+
+    @include media_1180 {
+      padding: 10px;
+      width: 140px;
+      height: 140px;
+    }
+
+    @include media_820 {
+      width: 130px;
+      height: 130px;
+    }
   }
 
   .link {

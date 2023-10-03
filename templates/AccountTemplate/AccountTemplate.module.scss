@@ -2,11 +2,27 @@
 @import "@styles/variables";
 
 .section {
-  padding: 150px 0;
+  padding: 100px 0;
+
+  @include media_980 {
+    padding: $padding_820 0;
+  }
+
+  @include media_660 {
+    padding: $padding_660 0;
+  }
 
   .title {
     padding-bottom: 100px;
     text-align: center;
+
+    @include media_980 {
+      padding-bottom: $padding_820;
+    }
+
+    @include media_660 {
+      padding-bottom: $padding_660;
+    }
   }
 
   .list {
@@ -15,5 +31,22 @@
     justify-content: center;
     gap: 30px;
     list-style-type: none;
+
+    @include media_980 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media_820 {
+      gap: 20px;
+    }
+
+    @include media_660 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media_440 {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
   }
 }
