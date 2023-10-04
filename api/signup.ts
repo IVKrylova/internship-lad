@@ -9,7 +9,7 @@ export const signup = async (
   try {
     if (email && password) {
       const user: AxiosResponse<TUser> = await axios.post<TUser>(
-        `https://reqres.in/api/login`,
+        `https://reqres.in/api/register`,
         {
           email: email,
           password: password,

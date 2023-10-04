@@ -11,7 +11,7 @@ import {
   ButtonGoBack,
 } from "@components";
 import { useFormAndValidation } from "@hooks";
-import { signup, auth } from "@api";
+import { signup, login } from "@api";
 import { TError, TUser } from "@types";
 
 import style from "./SignupTemplate.module.scss";
@@ -33,12 +33,7 @@ export const SignupTemplate: FC = () => {
     const res: TUser | TError = await signup(values.email, values.password);
     if (res && "token" in res) {
       setIsActiveButton(true);
-      // В коммерческом приложении после успешной регистрации
-      // должен отправляться запрос на login,
-      // но фейковое API предоставляет возможность зайти в приложение только
-      // под одним паролем и логином. Я создала функцию auth, чтобы отправить
-      // запрос авторизации с правильными данными
-      const token: string | TError = await auth(values.email, values.password);
+      const token: string | TError = await login(values.email, values.password);
       if (token && typeof token === "string") {
         localStorage.setItem("token", token);
         router.push("/account");

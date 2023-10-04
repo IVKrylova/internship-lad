@@ -5,7 +5,6 @@ export { getCurrentArticle } from "./getCurrentArticle";
 export { getAllPatchArticles } from "./getAllPatchArticles";
 export { login } from "./login";
 export { signup } from "./signup";
-export { auth } from "./auth";
 export { getAllPatchGuides } from "./getAllPatchGuides";
 export { getCurrentGuide } from "./getCurrentGuide";
 export { updateAvatar } from "./updateAvatar";
