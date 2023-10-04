@@ -1,3 +1,14 @@
+# Приложение о путешествиях по Египту
+Проект для отборочных испытаний на стажировку в Lad
+
+## Стек технологий
+* 
+
+
+
+https://internship-lad.vercel.app/
+
+
 https://www.figma.com/file/w9deJ0o9sf6jrfPYrjQQ4r/landing?node-id=10%3A8429&mode=dev
 
 https://reqres.in/
