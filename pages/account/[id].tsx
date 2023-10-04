@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { GetStaticProps, InferGetStaticPropsType, GetStaticPaths } from "next";
 
 import { GuideTemplate } from "@templates";
-import { LayoutApp } from "@layout";
+import { LayoutAccount } from "@layout";
 import { TNextPageWithLayout, TGuide, TPathsGuides, TError } from "@types";
 import { wrapper } from "@servises/store";
 import { getAllPatchGuides, getCurrentGuide } from "@api";
@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = wrapper.getStaticProps(
 );
 
 Guide.getLayout = function getLayout(page: ReactNode) {
-  return <LayoutApp>{page}</LayoutApp>;
+  return <LayoutAccount>{page}</LayoutAccount>;
 };
 
 export default connect((state) => state)(Guide);

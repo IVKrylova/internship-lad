@@ -1,0 +1,30 @@
+@import "@styles/_mixins";
+@import "@styles/_variables";
+
+.wrap {
+  @include flex-column;
+  min-height: 100vh;
+
+  .main {
+    @include width_1360;
+    margin: 0 auto;
+    @include grow-shrink;
+    @include grid-1fr;
+
+    @include media_1440 {
+      max-width: $media_1440;
+    }
+
+    @include media_1180 {
+      max-width: $media_1180;
+    }
+
+    @include media_980 {
+      max-width: $media_980;
+    }
+
+    @include media_820 {
+      padding: 0 20px;
+    }
+  }
+}

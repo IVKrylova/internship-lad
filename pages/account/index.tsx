@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { ReactNode } from "react";
 
 import { AccountTemplate } from "@templates";
-import { LayoutApp } from "@layout";
+import { LayoutAccount } from "@layout";
 import { TNextPageWithLayout } from "@types";
 
 const Account: TNextPageWithLayout = () => {
@@ -10,7 +10,7 @@ const Account: TNextPageWithLayout = () => {
 };
 
 Account.getLayout = function getLayout(page: ReactNode) {
-  return <LayoutApp>{page}</LayoutApp>;
+  return <LayoutAccount>{page}</LayoutAccount>;
 };
 
 export default connect((state) => state)(Account);
