@@ -19,6 +19,6 @@ export const LINKS: TLink[] = [
   },
   {
     text: "Contact",
-    link: "/#contact",
+    link: "#contact",
   },
 ];
