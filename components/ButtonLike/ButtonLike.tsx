@@ -21,8 +21,6 @@ export const ButtonLike: FC<TProps> = ({ id, liked }) => {
   const router: NextRouter = useRouter();
   const { pathname } = router;
 
-  console.log(pathname);
-
   const [flag, setFlag] = useState<boolean>(false);
 
   const toggleLike = async (evt: MouseEvent<HTMLButtonElement>) => {
