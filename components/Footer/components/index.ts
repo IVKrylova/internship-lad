@@ -1,2 +1,2 @@
-export { ColumnLinks } from './ColumnLinks';
-export { Contacts } from './Contacts';
+export { ColumnLinks } from "./ColumnLinks";
+export { Contacts } from "./Contacts";

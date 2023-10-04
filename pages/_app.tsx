@@ -6,8 +6,8 @@ import Head from "next/head";
 
 import { wrapper } from "@servises/store";
 
-import "@styles/globals.css";
 import "@styles/reset.css";
+import "@styles/globals.css";
 
 type TPage<P = {}> = NextPage<P> & {
   getLayout?: (page: ReactNode) => ReactNode;

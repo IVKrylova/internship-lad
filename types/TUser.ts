@@ -1,4 +1,4 @@
 export type TUser = {
-  id: number,
+  id: number;
   token: string;
-}
+};

@@ -1,1 +1,1 @@
-export { ColumnLinks } from './ColumnLinks';
+export { ColumnLinks } from "./ColumnLinks";

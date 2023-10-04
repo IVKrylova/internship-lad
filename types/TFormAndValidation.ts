@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, ChangeEvent } from 'react';
+import { Dispatch, SetStateAction, ChangeEvent } from "react";
 
 export type TFormAndValidation = {
   handleChange: (evt: ChangeEvent<HTMLInputElement>) => void;
@@ -23,4 +23,4 @@ export type TFormAndValidation = {
     repeatPassword?: string;
     avatar?: string;
   };
-}
+};
