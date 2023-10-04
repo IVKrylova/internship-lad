@@ -66,7 +66,7 @@ export const GuideTemplate: FC<TProps> = ({ guide }) => {
     if (guide) {
       const guides = localStorage.getItem("guides");
       if (guides !== null) {
-        const item: TGuide = JSON.parse(guides).find(
+        const item: TGuide = JSON.parse(guides)?.find(
           (el: TGuide) => el.id === guide.id
         );
         if (item && item.liked !== undefined) setLiked(item.liked);

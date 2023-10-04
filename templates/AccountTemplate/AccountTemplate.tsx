@@ -7,6 +7,7 @@ import { getGuides } from "@api";
 import { H1 } from "@components";
 import { NextThunkDispatch } from "@servises/store";
 import { fetchGuides } from "@servises/slices/guides";
+import { getGuidesFromLocalStorage } from "@utils";
 
 import style from "./AccountTemplate.module.scss";
 
@@ -16,26 +17,16 @@ export const AccountTemplate: FC = () => {
 
   const fetchData = async () => {
     const guides: TGuides | TError = await getGuides();
-    if (guides && Array.isArray(guides)) dispatch(fetchGuides(guides));
+    if (guides && Array.isArray(guides)) {
+      dispatch(fetchGuides(guides));
+      localStorage.setItem("guides", JSON.stringify(guides));
+    }
   };
 
   useEffect(() => {
-    const data = localStorage.getItem("guides");
-    if (data !== null) {
-      const arr = JSON.parse(data);
-      if (
-        arr.length > 0 &&
-        "id" in arr[0] &&
-        "email" in arr[0] &&
-        "first_name" in arr[0] &&
-        "last_name" in arr[0] &&
-        "avatar" in arr[0] &&
-        "liked" in arr[0]
-      ) {
-        dispatch(fetchGuides(arr));
-      } else {
-        fetchData();
-      }
+    const data = getGuidesFromLocalStorage();
+    if (data) {
+      dispatch(fetchGuides(data));
     } else if (!guides || guides.length === 0) {
       fetchData();
     }
