@@ -9,7 +9,7 @@ import { wrapper } from "@servises/store";
 import "@styles/reset.css";
 import "@styles/globals.css";
 
-type TPage<P = {}> = NextPage<P> & {
+type TPage<P = object> = NextPage<P> & {
   getLayout?: (page: ReactNode) => ReactNode;
 };
 

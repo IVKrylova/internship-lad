@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = wrapper.getStaticProps(
-  (store) =>
+  () =>
     async ({ params }) => {
       let guide: TGuide | null = null;
       if (typeof params?.id === "string") {
