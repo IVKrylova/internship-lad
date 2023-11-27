@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
 import { NextPage } from "next";
 import Head from "next/head";
+import { withErrorBoundary } from "react-error-boundary";
 
 import { wrapper } from "@servises/store";
 
@@ -38,4 +39,6 @@ const WrappedApp = ({ Component, ...pageProps }: TProps) => {
   );
 };
 
-export default WrappedApp;
+export default withErrorBoundary(WrappedApp, {
+  fallback: <div>Something went wrong...</div>
+});
