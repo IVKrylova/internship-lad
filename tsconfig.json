@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,74 +16,30 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@components": [
-        "components"
-      ],
-      "@components/*": [
-        "components/*"
-      ],
-      "@layout": [
-        "layout"
-      ],
-      "@layout/*": [
-        "layout/*"
-      ],
-      "@templates": [
-        "templates"
-      ],
-      "@templates/*": [
-        "templates/*"
-      ],
-      "@hooks": [
-        "hooks"
-      ],
-      "@hooks/*": [
-        "hooks/*"
-      ],
-      "@public": [
-        "public"
-      ],
-      "@public/*": [
-        "public/*"
-      ],
-      "@api": [
-        "api"
-      ],
-      "@api/*": [
-        "api/*"
-      ],
-      "@styles": [
-        "styles"
-      ],
-      "@styles/*": [
-        "styles/*"
-      ],
-      "@servises": [
-        "servises"
-      ],
-      "@servises/*": [
-        "servises/*"
-      ],
-      "@types": [
-        "types"
-      ],
-      "@types/*": [
-        "types/*"
-      ],
-      "@utils": [
-        "utils"
-      ],
-      "@utils/*": [
-        "utils/*"
-      ]
+      "@components": ["components"],
+      "@components/*": ["components/*"],
+      "@layout": ["layout"],
+      "@layout/*": ["layout/*"],
+      "@templates": ["templates"],
+      "@templates/*": ["templates/*"],
+      "@hooks": ["hooks"],
+      "@hooks/*": ["hooks/*"],
+      "@public": ["public"],
+      "@public/*": ["public/*"],
+      "@api": ["api"],
+      "@api/*": ["api/*"],
+      "@styles": ["styles"],
+      "@styles/*": ["styles/*"],
+      "@servises": ["servises"],
+      "@servises/*": ["servises/*"],
+      "@types": ["types"],
+      "@types/*": ["types/*"],
+      "@utils": ["utils"],
+      "@utils/*": ["utils/*"],
+      "@mock": ["mock"],
+      "@mock/*": ["mock/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
